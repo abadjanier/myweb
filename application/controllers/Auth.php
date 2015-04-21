@@ -803,5 +803,22 @@ class Auth extends CI_Controller {
 
 		if (!$render) return $view_html;
 	}
+        
+        function deleteUser($id){
+			$response = new stdClass();
+			if ($this->ion_auth->delete_user($id)){
+				$response->error = false;
+				$this->output
+				->set_content_type('application/json')
+				->set_output(json_encode($response));
+			}else{
+				$response->error = true;
+				$this->output
+				->set_content_type('application/json')
+				->set_output(json_encode($response));
+			}
+
+		
+	}
 
 }
