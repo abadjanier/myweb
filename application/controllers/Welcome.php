@@ -20,7 +20,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('admin/index_admin_view');
-                $this->output->enable_profiler(TRUE);
+            echo 'vamos!';
+//		$this->load->view('admin/index_admin_view');
+//                $this->output->enable_profiler(TRUE);
 	}
 }
