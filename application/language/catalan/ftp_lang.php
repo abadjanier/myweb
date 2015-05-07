@@ -1,24 +1,20 @@
 <?php
-/**
- * System messages translation for CodeIgniter(tm)
- *
- * @author	CodeIgniter community
- * @author	Iban Eguia
- * @copyright	Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
- */
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['ftp_no_connection']		= 'No ha sido posible localizar una ID de conexión válida. Por favor, asegúrate de que estás conectado antes de realizar cualquier rutina de archivos.';
-$lang['ftp_unable_to_connect']		= 'No ha sido posible conectarse al servidor FTP usando el nombre de host proporcionado.';
-$lang['ftp_unable_to_login']		= 'No ha sido posible identificarse en el servidor. Por favor, comprueba el usuario y la contraseña.';
-$lang['ftp_unable_to_mkdir']		= 'No ha sido posible crear el directorio especificado.';
-$lang['ftp_unable_to_changedir']	= 'No ha sido posible cambiar de directorio.';
-$lang['ftp_unable_to_chmod']		= 'No ha sido posible configurar los permisos de archivo. Por favor, comprueba tu ruta.';
-$lang['ftp_unable_to_upload']		= 'No ha sido posible subir el archivo especificado. Por favor, comprueba tu ruta.';
-$lang['ftp_unable_to_download']		= 'No ha sido posible descargar el archivo especificado. Por favor, comprueba tu ruta.';
-$lang['ftp_no_source_file']		= 'No ha sido posible localizar el archivo fuente. Por favor, comprueba tu ruta.';
-$lang['ftp_unable_to_rename']		= 'No ha sido posible renombrar el archivo.';
-$lang['ftp_unable_to_delete']		= 'No ha sido posible borrar el archivo.';
-$lang['ftp_unable_to_move']		= 'No ha sido posible mover el archivo. Por favor, asegúrate de que la carpeta de destino existe.';
+/* Sergi Tur Badenas: https://github.com/acacha/CodeIgniter-catalan*/
+
+$lang['ftp_no_connection']			= "No s'ha pogut trobar un ID de connexió vàlid. Si us plau assegureu-vos que esteu connectats abans de realitzar qualsevol operació amb fitxers.";
+$lang['ftp_unable_to_connect']		= "No s'ha pogut connectar amb el servidor FTP amb el nom de màquina especificat.";
+$lang['ftp_unable_to_login']		= "No s'ha pogut entrar al servidor FTP. Si us plau comproveu el vostre nom d'usuari i la vostra paraulade pas.";
+$lang['ftp_unable_to_makdir']		= "No s'ha pogut crear el directori especificat.";
+$lang['ftp_unable_to_changedir']	= "No s'ha pogut canviar el directori.";
+$lang['ftp_unable_to_chmod']		= "No s'han pogut establir els permisos de fitxer. Comproveu el camí a la carpeta. Nota: aquesta característica només està disponible a PHP 5 o superior.";
+$lang['ftp_unable_to_upload']		= "No s'ha pogut pujar el fitxer especificat. Comproveu el camí al fitxer.";
+$lang['ftp_unable_to_download']		= "No s'ha pogut descarregar el fitxer especificat. Comproveu el camí al fitxer.";
+$lang['ftp_no_source_file']			= "No s'ha pogut localitzar l'origen del fitxer. Comproveu el camí al fitxer.";
+$lang['ftp_unable_to_rename']		= "No s'ha pogut canviar el nom al fitxer.";
+$lang['ftp_unable_to_delete']		= "No s'ha pogut esborrar el fitxer.";
+$lang['ftp_unable_to_move']			= "No s'ha pogut moure el fitxer. Comproveu que la carpeta de destinació existeix.";
+
+
+/* End of file ftp_lang.php */
+/* Location: ./system/language/english/ftp_lang.php */

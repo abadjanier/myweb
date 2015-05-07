@@ -21,6 +21,26 @@
     <![endif]-->
   </head>
   <body class="login-page">
+      <div class="container">
+          <div class="dropdown" style="float: right">
+              <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Tutorials
+                  <span class="caret"></span></button>
+              <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="menu1">
+                  <li role="presentation" >
+                      <?php if ($this->session->idiom == 'spanish') { ?>
+                          <a role="menuitem" tabindex="-1" href="<?= base_url() ?>/lang/cat">
+                              <img alt="" class="img-circle" src="<?= base_url(); ?>assets/global/img/flags/catalan.png"> Catala </a>
+                      <?php } else { ?>
+                          <a role="menuitem" tabindex="-1" href="<?= base_url() ?>/lang/es">
+                              <img alt="" class="img-circle" src="<?= base_url(); ?>assets/global/img/flags/spanish.png"> Espanyol </a>
+                      <?php } ?>
+                  </li>
+                  <!-- END QUICK SIDEBAR TOGGLER -->
+              </ul>
+          </div>
+      </div>
+  </div>
+      
     <div class="login-box">
       <div class="login-logo">
           <span><?php echo lang('login_heading');?></span>
@@ -37,19 +57,19 @@
               <?php echo form_input($password);?>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
-          <div class="row">
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="submit" class="btn btn-primary btn-block btn-flat"><?php echo lang('login_submit_btn'); ?></button>
+            </div><!-- /.col -->
             <div class="col-xs-8">    
-              <div class="checkbox icheck">
-                <label>
-                    <?php echo lang('login_remember_label', 'remember');?>
-                  <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>                    
-                </label>
-              </div>                        
+                <div class="checkbox icheck">
+                    <label>
+                        <?php echo lang('login_remember_label', 'remember'); ?>
+                        <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"'); ?>                    
+                    </label>
+                </div>                        
             </div><!-- /.col -->
-            <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat"><?php echo lang('login_submit_btn'); ?></button>
-            </div><!-- /.col -->
-          </div>
+        </div>
         <?php echo form_close();?>
 
         <a href="forgot_password"><?php echo lang('login_forgot_password');?></a><br>

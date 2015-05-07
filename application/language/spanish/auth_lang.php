@@ -66,6 +66,7 @@ $lang['create_user_phone_label']                       = 'Teléfono:';
 $lang['create_user_password_label']                    = 'Contraseña:';
 $lang['create_user_password_confirm_label']            = 'Confirmar contraseña:';
 $lang['create_user_submit_btn']                        = 'Crear Usuario';
+$lang['create_user_validation_name_label']             = 'Nombre';
 $lang['create_user_validation_fname_label']            = 'Nombre';
 $lang['create_user_validation_lname_label']            = 'Apellidos';
 $lang['create_user_validation_email_label']            = 'Correo electrónico';

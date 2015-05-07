@@ -1,28 +1,24 @@
 <?php
-/**
- * System messages translation for CodeIgniter(tm)
- *
- * @author	CodeIgniter community
- * @author	Iban Eguia
- * @copyright	Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
- */
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['upload_userfile_not_set'] = 'No ha sido posible encontrar una variable post llamada userfile.';
-$lang['upload_file_exceeds_limit'] = 'El archivo subido excede el tamaño máximo permitido por tu configuración de PHP.';
-$lang['upload_file_exceeds_form_limit'] = 'El archivo subido excede el tamaño máximo permitido por el formulario.';
-$lang['upload_file_partial'] = 'El archivo solo se subió parcialmente.';
-$lang['upload_no_temp_directory'] = 'No se encuentra el directorio temporal.';
-$lang['upload_unable_to_write_file'] = 'El archivo no pudo ser escrito en el disco.';
-$lang['upload_stopped_by_extension'] = 'La subida del archivo paró por extensión.';
-$lang['upload_no_file_selected'] = 'No seleccionaste un archivo para subir.';
-$lang['upload_invalid_filetype'] = 'El tipo de archivo que intentas subir no está permitido.';
-$lang['upload_invalid_filesize'] = 'El archivo que intentas subir es más grande que el tamaño permitido.';
-$lang['upload_invalid_dimensions'] = 'La imagen que intentas subir no encaja en las dimensiones permitidas.';
-$lang['upload_destination_error'] = 'Se encontró un problema al intentar mover el archivo subido a su destino final.';
-$lang['upload_no_filepath'] = 'La ruta de subida no parece válida.';
-$lang['upload_no_file_types'] = 'No has especificado ningún tipo de archivo permitido.';
-$lang['upload_bad_filename'] = 'El nombre de archivo que has proporcionado ya existe en el servidor.';
-$lang['upload_not_writable'] = 'La carpeta de destino de la subida no parece escribible.';
+/* Sergi Tur Badenas: https://github.com/acacha/CodeIgniter-catalan*/
+
+$lang['upload_userfile_not_set'] = "No s'ha pogut trobar una variable post anomenada userfile.";
+$lang['upload_file_exceeds_limit'] = "El fitxer a pujar excedeix la mida permesa segons la configuració de PHP.";
+$lang['upload_file_exceeds_form_limit'] = "El fitxer a pujar excedeix la mida permesa segons la configuració del formulari.";
+$lang['upload_file_partial'] = "El fitxer només s'ha pogut pujar de forma parcial.";
+$lang['upload_no_temp_directory'] = "No s'ha pogut trobar la carpeta temporal.";
+$lang['upload_unable_to_write_file'] = "El fitxer no s'ha pogut escriure al disc.";
+$lang['upload_stopped_by_extension'] = "La pujada del fitxers ha estat aturada per la extensió del fitxer.";
+$lang['upload_no_file_selected'] = "No s'ha seleccionat cap fitxer per a pujar.";
+$lang['upload_invalid_filetype'] = "El tipus de fitxer que s'està intentant pujar no és un tipus permès.";
+$lang['upload_invalid_filesize'] = "The file you are attempting to upload is larger than the permitted size.";
+$lang['upload_invalid_dimensions'] = "La imatge que s'ha intentat pujar excedeix les mides màximes d'altura i amplada.";
+$lang['upload_destination_error'] = "S'ha trobat un problema mentrestant s'intentava moure el fitxer pujat a la seva destinació definitiva.";
+$lang['upload_no_filepath'] = "El path on es vol guardar el fitxer de pujada no és vàlid.";
+$lang['upload_no_file_types'] = "No heu especificat cap tipus de fitxers permesos.";
+$lang['upload_bad_filename'] = "El nom de fitxer especificat ja existeix al servidor.";
+$lang['upload_not_writable'] = "No es pot escriure a la carpeta de destinació.";
+
+
+/* End of file upload_lang.php */
+/* Location: ./system/language/english/upload_lang.php */

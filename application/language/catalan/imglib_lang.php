@@ -1,29 +1,26 @@
 <?php
-/**
- * System messages translation for CodeIgniter(tm)
- *
- * @author	CodeIgniter community
- * @author	Iban Eguia
- * @copyright	Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
- */
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['imglib_source_image_required'] = 'Debes especificar una imagen fuente en las preferencias.';
-$lang['imglib_gd_required'] = 'Se requiere la librería de imagen GD para esta característica.';
-$lang['imglib_gd_required_for_props'] = 'El servidor debe soportar la librería de imagen GD para determinar las propiedades de la imagen.';
-$lang['imglib_unsupported_imagecreate'] = 'El servidor no soporta la función de GD requerida para procesar este tipo de imagen.';
-$lang['imglib_gif_not_supported'] = 'Las imágenes GIF no suelen estar soportadas habitualmente a causa de restricciones de licencias. Puede que debas usar imágenes JPG o PNG en su lugar.';
-$lang['imglib_jpg_not_supported'] = 'Las imágenes JPG no están soportadas.';
-$lang['imglib_png_not_supported'] = 'Las imágenes PNG no están soportadas.';
-$lang['imglib_jpg_or_png_required'] = 'El protocolo de redimensión de imagen especificado en las preferencias solo funciona con imágenes JPEG o PNG.';
-$lang['imglib_copy_error'] = 'Se ha encontrado un error al intentar reemplazar el archivo. Por favor, asegúrate de que la carpeta es escribible.';
-$lang['imglib_rotate_unsupported'] = 'Parece que la rotación de imágenes no está soportada en el servidor.';
-$lang['imglib_libpath_invalid'] = 'La ruta a la librería de imagen no es correcta. Por favor, configura la ruta correcta en las preferencias de imagen.';
-$lang['imglib_image_process_failed'] = 'Ha fallado el tratamiento de la imagen. Por favor, verifica que el servidor soporta el protocolo elegido y que la ruta a la librería de imagen es correcta.';
-$lang['imglib_rotation_angle_required'] = 'Se requiere un ángulo de rotación para rotar la imagen.';
-$lang['imglib_invalid_path'] = 'La ruta a la imagen no es correcta.';
-$lang['imglib_copy_failed'] = 'La rutina de copia de imagen ha fallado.';
-$lang['imglib_missing_font'] = 'No se ha podido encontrar una fuente para su uso.';
-$lang['imglib_save_failed'] = 'No se ha podido guardar la imagen. Por favor, asegúrate de que la imagen y la carpeta son escribibles.';
+/* Sergi Tur Badenas: https://github.com/acacha/CodeIgniter-catalan*/
+
+$lang['imglib_source_image_required'] = "Cal indicar una imatge d'origen a les vostres peferències.";
+$lang['imglib_gd_required'] = "Es necesita la biblioteca GD per realitzar aquesta operació.";
+$lang['imglib_gd_required_for_props'] = "El vostre servidor ha de suportar  la llibreria GD per tal de determinar les propietats de la imatge.";
+$lang['imglib_unsupported_imagecreate'] = "El vostre servidor no suporta la funció GD requerida per tal de procesar el tipus d'imatge.";
+$lang['imglib_gif_not_supported'] = "Les imatges de típus GIF sovint no són suportades per problemes de restriccions en la llicència. Heu d'utilitzar imatges JPG o PNG.";
+$lang['imglib_jpg_not_supported'] = "No es suporten imatges de típus JPG.";
+$lang['imglib_png_not_supported'] = "No se suporten imatges de típus PNG.";
+$lang['imglib_jpg_or_png_required'] = "El protocol per a canviar la mida de la imatge especificat a les vostres preferències només funciona amb imatges de típus JPEG o PNG.";
+$lang['imglib_copy_error'] = "Ha succeït un error mentres s'intentava reemplaçar el fitxer. Si us plau assegureu-vos que es pot escriure al directori.";
+$lang['imglib_rotate_unsupported'] = "La rotació d'imatges no sembla una opció suportada pel vostre servidors.";
+$lang['imglib_libpath_invalid'] = "El camí especificat cap a la llibreria d'imatges no és correcte. Si us plau indiqueu el camí correcte a les vostres preferències.";
+$lang['imglib_image_process_failed'] = "No s'ha pogut procesar la imatge. Si us plau verifiqueu que el vostre servidor suporta el protocol escollit i que el camí cap a la llibreria d'imatges és correcte.";
+$lang['imglib_rotation_angle_required'] = "Es requereix un angle de rotació per girar la imatge.";
+$lang['imglib_writing_failed_gif'] = "Imatge GIF.";
+$lang['imglib_invalid_path'] = "El camí cap a la imatge no és correcte.";
+$lang['imglib_copy_failed'] = "La operació de copia de la imatge ha fallat.";
+$lang['imglib_missing_font'] = "No s'ha pogut trobar la font.";
+$lang['imglib_save_failed'] = "No s'ha pogut salvar la imatge. Si us plau assegureu-vos que es pot escriure a la imatge i al directori.";
+
+
+/* End of file imglib_lang.php */
+/* Location: ./system/language/english/imglib_lang.php */
