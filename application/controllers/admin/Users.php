@@ -123,5 +123,49 @@ class Users extends CI_Controller {
                     ->set_output(json_encode($response));
         }
     }
+    
+    function getUsersDatatable() {
+        $this->output->enable_profiler(FALSE);
+
+        //If is an ajax requiest
+        if ($this->input->is_ajax_request()) {
+            $users = $this->ion_auth->users()->result();
+            $formatedUsers = new stdClass();
+            $formatedUsers->data = array();
+
+            foreach ($users as $user) {
+                $formatedUsers->data[] = $user;
+            }
+            $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode($users));
+        } else {
+            redirect("admin/users", "refresh");
+        }
+    }
+    
+    function deleteUser($id){
+        if ($this->__isAjax()){
+            $result = new stdClass();
+            $admin = $this->ion_auth->user()->row();
+            if ($this->ion_auth->delete_user($id)){
+                $result->response = true;
+                $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode($result));
+            }else{
+                $result->response = false;
+                $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode($result));
+            }
+        }else{
+            redirect("admin/users", "refresh");
+        }
+    }
+    
+    private function __isAjax() {
+        return $this->input->is_ajax_request();
+    }
 
 }

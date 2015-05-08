@@ -52,8 +52,7 @@
               
               <li class="dropdown messages-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-envelope-o"></i>
-                  <span class="label label-success">4</span>
+                  <i class="fa fa-flag-o "></i>
                 </a>
                   <ul class="dropdown-menu">
                       <li>
@@ -509,8 +508,8 @@
     
     
     <!-- DATA TABES SCRIPT -->
-    <script src="<?= base_url()?>assets/admin/plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
-    <script src="<?= base_url()?>assets/admin/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+<!--    <script src="<?= base_url()?>assets/admin/plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="<?= base_url()?>assets/admin/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>-->
 
     
     <script type="text/javascript">
