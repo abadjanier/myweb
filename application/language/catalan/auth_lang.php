@@ -118,6 +118,12 @@ $lang['edit_group_submit_btn']             = 'Save Group';
 $lang['edit_group_validation_name_label']  = 'Group Name';
 $lang['edit_group_validation_desc_label']  = 'Description';
 
+// Activate User Account
+$lang['activate_user_password_heading']                   = 'Establir Contrasenya';
+$lang['activate_user_password']                           = 'Contrasenya';
+$lang['activate_user_repeat_password']                    = 'Repetir contrasenya';
+$lang['activate_user_save_password']                    = 'Guardar';
+
 // Change Password
 $lang['change_password_heading']                               = 'Change Password';
 $lang['change_password_old_password_label']                    = 'Old Password:';

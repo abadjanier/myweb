@@ -827,5 +827,41 @@ class Auth extends CI_Controller {
 
 		
 	}
+        
+        
+        function activateUser($id = false, $code = false) {
+        //if form validation enviamos el formulario si no que cargue la vista de cambiar de pass
+        $this->form_validation->set_rules('password', 'lang:activate_user_password', 'required|alpha_numeric|min_length[8]');
+        $this->form_validation->set_rules('repeat_password', 'lang:activate_user_repeat_password', 'required|matches[password]');
+        if ($this->form_validation->run() == true) {
+            $activate = $this->ion_auth->activate($this->input->post('id'), $this->input->post('code'));
+            if ($activate) {
+                $data = array(
+                    'password' => $this->input->post('password')
+                );
+                $this->ion_auth->update($this->input->post('id'), $data);
+                $data2 = array(
+                    "message" => "Ya puede autentificarse"
+                );
+//                redirect("admin/auth/login", "refresh");
+                $this->load->view('auth/login', $data2);
+            }
+        } else {
+            if ($id == false && $code == false) {
+                $data = array(
+                    "message" => "",
+                    "id" => $this->input->post('id'),
+                    "code" => $this->input->post('code')
+                );
+            } else {
+                $data = array(
+                    "message" => "",
+                    "id" => $id,
+                    "code" => $code
+                );
+            }
+            $this->load->view('auth/activate_user_view', $data);
+        }
+    }
 
 }

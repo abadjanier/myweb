@@ -132,13 +132,15 @@ class Users extends CI_Controller {
             $users = $this->ion_auth->users()->result();
             $formatedUsers = new stdClass();
             $formatedUsers->data = array();
-
+            $userLog = $this->ion_auth->user()->row();
             foreach ($users as $user) {
+                if ($user->username !== $userLog->username) {
                 $formatedUsers->data[] = $user;
+                }
             }
             $this->output
                     ->set_content_type('application/json')
-                    ->set_output(json_encode($users));
+                    ->set_output(json_encode($formatedUsers->data));
         } else {
             redirect("admin/users", "refresh");
         }
@@ -163,6 +165,53 @@ class Users extends CI_Controller {
             redirect("admin/users", "refresh");
         }
     }
+    
+    function deactivate($id) {
+        $response = new stdClass();
+        $this->output->enable_profiler(FALSE);
+        if ($this->__isAjax()) {
+            $id = (int) $id;
+
+            if ($this->ion_auth->logged_in() && $this->ion_auth->is_admin()) {
+                if ($this->ion_auth->deactivate($id)){
+                $response->error = true;
+                $this->output
+                        ->set_content_type('application/json')
+                        ->set_output(json_encode($response));
+                }else{
+                $response->error = false;
+                $this->output
+                        ->set_content_type('application/json')
+                        ->set_output(json_encode($response));
+                }
+            }
+        }
+    }
+    
+    function activate($id) {
+        $response = new stdClass();
+        $this->output->enable_profiler(FALSE);
+        if ($this->__isAjax()) {
+            $id = (int) $id;
+
+            if ($this->ion_auth->logged_in() && $this->ion_auth->is_admin()) {
+                if ($this->ion_auth->activate($id)){
+                $response->error = true;
+                $this->output
+                        ->set_content_type('application/json')
+                        ->set_output(json_encode($response));
+                }else{
+                $response->error = false;
+                $this->output
+                        ->set_content_type('application/json')
+                        ->set_output(json_encode($response));
+                }
+            }
+        }
+    }
+    
+    
+   
     
     private function __isAjax() {
         return $this->input->is_ajax_request();

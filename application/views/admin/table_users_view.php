@@ -43,8 +43,8 @@
                             <td>{{ user.id }}</td>
                             <td>{{ user.email }}</td>
                             <td>{{ user.username }}</td>
-                            <td><span ng-show="{{user.active == 1}}" class="btn btn-sm btn-success fa fa-check"> Activo </span>
-                                <span ng-show="{{user.active != 1}}" class="btn btn-sm btn-danger fa fa-times"> No activo </span>
+                            <td><span ng-show="{{user.active == 1}}" ng-click="deactiveUser(user.id, user.username)" class="btn btn-sm btn-success fa fa-check"> Activo </span>
+                                <span ng-show="{{user.active != 1}}" ng-click="activeUser(user.id, user.username)" class="btn btn-sm btn-danger fa fa-times"> No activo </span>
                             </td>
                             <td><a ng-click="deleteUser(user.id, user.username)" class="btn btn-sm btn-warning">
                                     <i class="fa fa-times"></i> Delete </a>

@@ -43,36 +43,28 @@
       
     <div class="login-box">
       <div class="login-logo">
-          <span><?php echo lang('login_heading');?></span>
+          <span><?php echo lang('activate_user_password_heading');?></span>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg"><?php echo lang('login_subheading');?></p>
-        <div id="infoMessage"><?php echo $message;?></div>
-        <?php echo form_open("admin/auth/login");?>
+        <div id="infoMessage"><?php if ($message) echo $message;?></div>
+        <?php echo validation_errors(); ?>
+        <?php echo form_open("admin/auth/activateuser");?>
           <div class="form-group has-feedback">
-              <input id="identity" type="text" name="identity" class="form-control" placeholder="<?= lang('login_identity_label')?>">
-              <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+              <input type="password" name="password" class="form-control" placeholder="<?= lang('activate_user_password')?>">
+              <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-              <input id="password" type="password" name="password" class="form-control" placeholder="<?= lang('login_password_label')?>">
+              <input type="password" name="repeat_password" class="form-control" placeholder="<?= lang('activate_user_repeat_password')?>">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
         <div class="row">
             <div class="col-xs-12">
-                <button type="submit" class="btn btn-primary btn-block btn-flat"><?php echo lang('login_submit_btn'); ?></button>
-            </div><!-- /.col -->
-            <div class="col-xs-8">    
-                <div class="checkbox icheck">
-                    <label>
-                        <?php echo lang('login_remember_label', 'remember'); ?>
-                        <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"'); ?>                    
-                    </label>
-                </div>                        
+                <input type="hidden" name="id" value="<?= $id?>">
+                  <input type="hidden" name="code" value="<?= $code?>">
+                <button type="submit" class="btn btn-primary btn-block btn-flat"><?php echo lang('activate_user_save_password'); ?></button>
             </div><!-- /.col -->
         </div>
         <?php echo form_close();?>
-
-        <a href="forgot_password"><?php echo lang('login_forgot_password');?></a><br>
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->

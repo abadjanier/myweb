@@ -50,26 +50,21 @@
               <!-- Messages: style can be found in dropdown.less-->
               
               
-              <li class="dropdown messages-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-flag-o "></i>
-                </a>
-                  <ul class="dropdown-menu">
-                      <li>
-                          <!-- inner menu: contains the actual data -->
-                          <ul class="menu">
-                              <li><!-- start message -->
-                                  <?php if ($this->session->idiom == 'spanish') { ?>
-                                      <a role="menuitem" tabindex="-1" href="<?= base_url() ?>/lang/cat">
-                                          <img alt="" class="img-circle" src="<?= base_url(); ?>assets/global/img/flags/catalan.png"> Catala </a>
-                                  <?php } else { ?>
-                                      <a role="menuitem" tabindex="-1" href="<?= base_url() ?>/lang/es">
-                                          <img alt="" class="img-circle" src="<?= base_url(); ?>assets/global/img/flags/spanish.png"> Espanyol </a>
-                                  <?php } ?>
-                              </li><!-- end message -->
-                          </ul>
-                  </li>
-                </ul>
+              
+              
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Idioma <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                      <li><!-- start message -->
+                          <?php if ($this->session->idiom == 'spanish') { ?>
+                              <a role="menuitem" tabindex="-1" href="<?= base_url() ?>/lang/cat">
+                                  <img alt="" class="img-circle" src="<?= base_url(); ?>assets/global/img/flags/catalan.png"> Catala </a>
+                          <?php } else { ?>
+                              <a role="menuitem" tabindex="-1" href="<?= base_url() ?>/lang/es">
+                                  <img alt="" class="img-circle" src="<?= base_url(); ?>assets/global/img/flags/spanish.png"> Espanyol </a>
+                          <?php } ?>
+                      </li><!-- end message -->
+                  </ul>
               </li>
               
               
