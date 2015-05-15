@@ -52,17 +52,48 @@ header #container-select i{
     display: none;
 }
 
-header #container-select select#lenguage-selector option[value="ES"] {
-     background: url('../img/lenguage/spain.png') no-repeat right;
-     background-size: 30px;
+/* Drop down list with images */
+#ddList-lenguage-selector > a,
+#ddList-lenguage-selector > ul li a {
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    font-size: 20px;
 }
-header #container-select select#lenguage-selector option[value="CA"] {
-    background-image:url('../img/lenguage/spain.png');
+#ddList-lenguage-selector img{
+    max-width: 25px;
+    margin-top: 10px;
 }
-header #container-select select#lenguage-selector option[value="EN"] {
-    background-image:url('../img/lenguage/spain.png');
+#ddList-lenguage-selector label{
+    display: inline-block;
+    margin-top: 5px;
+}
+/* Drop down list with images on the right side */
+#ddList-lenguage-selector > a > img,
+#ddList-lenguage-selector > ul li a > img { 
+    float: right; 
+    margin-right: 0; 
+    margin-left: 5px;
 }
 
+.ddListContainer > a{
+    border: 0px!important;
+}
+
+.ddListContainer > ul {
+    border: 0px!important;
+    -moz-box-shadow: none!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+
+
+.ddListArrow{
+  right: 12px!important;
+  top: 50%!important;
+  margin-top: -2px!important;
+  border: solid 5px transparent!important;
+  border-top: solid 5px #505050!important;
+}
 
 /****************************************
         MENU HOME

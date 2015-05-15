@@ -11,12 +11,12 @@
 
     <!-- Custom CSS -->
     <link href="<?= base_url() ?>assets/custom/css/custom_css.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>assets/admin/plugins/ddlist/service.ddlist.jquery.css" rel="stylesheet" type="text/css" />
 
     <!-- Custom CSS Responsive -->
     <link href="<?= base_url() ?>assets/custom/css/responsive_custom_css.css" rel="stylesheet" type="text/css" />
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
 
 
 </head>
@@ -26,11 +26,11 @@
         <div class="container">
             <a class="navbar-brand" href="<?= base_url() ?>"> <img id="logotipo" src="<?= base_url() ?>assets/custom/img/logo.png"></a>
             <div id="container-select">
-              <i class="fa fa-globe"></i>
-                <select name="lenguage-selector" id="lenguage-selector">
-                    <option value="ES">ES</option>
-                    <option value="CA">CA</option>
-                    <option value="EN">EN</option>
+                <i class="fa fa-globe"></i>
+                <select id="lenguage-selector">
+                    <option value="ES" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/spain.png">ES</option>
+                    <option value="CA" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/catalonia.png">CA</option>
+                    <option value="EN" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/unitedkingdom.png">EN</option>
                 </select> 
             </div>
         </div>
@@ -81,4 +81,23 @@
                 </div>
             </div>
     </footer>
+
+    <script src="<?= base_url() ?>assets/admin/plugins/jQuery/jQuery-2.1.3.min.js"></script>
+    <script src="<?= base_url() ?>assets/admin/plugins/ddlist/service.ddlist.jquery.min.js"></script>
+
+
+    <script type="text/javascript">
+        // Execute on page load
+        $(function () {
+            $('#lenguage-selector').ddlist({
+                width: 105,
+                onSelected: function (index, value, text) {
+                    // Show selected province in status panel
+                    $('#fruitSelect').text(text + ' (value: ' + value + ')');
+                }
+            });
+        });
+    </script>
 </body>
+
+
