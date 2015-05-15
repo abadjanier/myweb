@@ -17,6 +17,7 @@ class Users extends CI_Controller {
         $idiom = (empty($this->session->idiom)) ?  $this->session->idiom : $this->config->item('language');
         $this->load->library(array('ion_auth', 'form_validation'));
         $this->load->database();
+        $this->load->helper('my_injector');
         $this->lang->load('auth', $idiom);
         if (!$this->ion_auth->logged_in()) {
             //redirect them to the login page
