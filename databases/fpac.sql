@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 07-05-2015 a las 10:33:48
+-- Tiempo de generación: 15-05-2015 a las 08:57:53
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -220,8 +220,16 @@ CREATE TABLE IF NOT EXISTS `tipos_even` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `descripcion` text COLLATE utf8_unicode_ci,
+  `color` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+
+--
+-- Volcado de datos para la tabla `tipos_even`
+--
+
+INSERT INTO `tipos_even` (`id`, `nombre`, `descripcion`, `color`) VALUES
+(6, 'abadjanier', 'jajajajajajajajjajajja', '#7c2a2a');
 
 -- --------------------------------------------------------
 
@@ -263,15 +271,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `company` varchar(100) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1430986610, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-(12, '127.0.0.1', 'abadjanier', '$2y$08$NbXgHct0v16Q2EbdOWfCN.BfweKt9Gj1ajxB7Ez.76Bnjzq9lDTZq', NULL, 'abadjanier.91@gmail.com', '9709485cac23c5cfb17da76503d80226ec61fefd', NULL, NULL, NULL, 1430986650, NULL, 0, NULL, NULL, NULL, NULL);
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1431671231, 1, 'Admin', 'istrator', 'ADMIN', '0'),
+(31, '127.0.0.1', 'abadjanier', '$2y$08$Kv9SYgm2H2kJBx9uQ9gt8eUZXud75BIdnzSyXsjW.Yj6Y/3KbEL/i', NULL, 'abadjanier.91@gmail.com', NULL, NULL, NULL, NULL, 1431334225, 1431414703, 1, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -287,7 +295,7 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
   UNIQUE KEY `uc_users_groups` (`user_id`,`group_id`),
   KEY `fk_users_groups_users1_idx` (`user_id`),
   KEY `fk_users_groups_groups1_idx` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
 --
 -- Volcado de datos para la tabla `users_groups`
@@ -296,7 +304,7 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
-(14, 12, 2);
+(33, 31, 2);
 
 --
 -- Restricciones para tablas volcadas
