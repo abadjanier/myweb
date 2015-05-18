@@ -58,41 +58,42 @@
                                 </div>
                             </div>
                             <div class="box-body">
-                                <table id="example1" class="table table-bordered table-striped table-condensed table-hover noselect" data-ng-init="getUser()">
+                                <table id="example1" class="table table-bordered table-striped table-condensed table-hover noselect" data-ng-init="getEvents()">
                                     <thead>
                                         <tr>
                                             <th ng-click="predicate = 'id'; reverse=!reverse">Id</th>
-                                            <th ng-click="predicate = 'email'; reverse=!reverse">Email</th>
-                                            <th ng-click="predicate = 'first_name'; reverse=!reverse">Username</th>
-                                            <th ng-click="predicate = 'active'; reverse=!reverse">Active</th>
-                                            <th ng-click="predicate = 'active'; reverse=!reverse">Action</th>
+                                            <th ng-click="predicate = 'nombre'; reverse=!reverse">Nombre</th>
+                                            <th ng-click="predicate = 'descripcion'; reverse=!reverse">Descripción</th>
+                                            <th ng-click="predicate = 'color'; reverse=!reverse">Color</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
 
-                                        <tr ng-repeat="user in users | orderBy:predicate:reverse | filter:search:strict" >
-                                            <td>{{ user.id }}</td>
-                                            <td>{{ user.email }}</td>
-                                            <td>{{ user.username }}</td>
-                                            <td><span ng-show="{{user.active == 1}}" ng-click="deactiveUser(user.id, user.username)" class="btn btn-sm btn-success fa fa-check"> Activo </span>
-                                                <span ng-show="{{user.active != 1}}" ng-click="activeUser(user.id, user.username)" class="btn btn-sm btn-danger fa fa-times"> No activo </span>
+                                        <tr ng-repeat="event in events | orderBy:predicate:reverse | filter:search:strict" >
+                                            <td>{{ event.id }}</td>
+                                            <td>{{ event.nombre }}</td>
+                                            <td>{{ event.descripcion }}</td>
+                                            <td style="background-color: {{ event.color }};"></td>
+<!--                                            <td><span ng-show="{{event.active == 1}}" ng-click="deactiveUser(event.id, event.username)" class="btn btn-sm btn-success fa fa-check"> Activo </span>
+                                                <span ng-show="{{event.active != 1}}" ng-click="activeUser(event.id, event.username)" class="btn btn-sm btn-danger fa fa-times"> No activo </span>
                                             </td>
-                                            <td><a ng-click="deleteUser(user.id, user.username)" class="btn btn-sm btn-warning">
+                                            <td><a ng-click="deleteUser(event.id, event.username)" class="btn btn-sm btn-warning">
                                                     <i class="fa fa-times"></i> Delete </a>
-                                            </td>
+                                            </td>-->
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
                                             <th ng-click="predicate = 'id'; reverse=!reverse">Id</th>
-                                            <th ng-click="predicate = 'email'; reverse=!reverse">Email</th>
-                                            <th ng-click="predicate = 'first_name'; reverse=!reverse">Username</th>
-                                            <th ng-click="predicate = 'active'; reverse=!reverse">Active</th>
-                                            <th>Action</th>
+                                            <th ng-click="predicate = 'nombre'; reverse=!reverse">Nombre</th>
+                                            <th ng-click="predicate = 'descripcion'; reverse=!reverse">Descripción</th>
+                                            <th ng-click="predicate = 'color'; reverse=!reverse">Color</th>
                                         </tr>
                                     </tfoot>
                                 </table>
+                                
+                                <pre> {{events}}</pre>
                             </div><!-- /.box-body -->
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -210,6 +211,66 @@
             </div>
         </div>
     </div>
+    
+    <!-- Modal-2 -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center" id="myModalLabel"><?= lang('create_user_heading') ?></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="register-box-body">
+                        <form name="newUser" ng-submit="createEvent()">
+                            <div class="form-group has-feedback">
+                                <input type="text" class="form-control" placeholder="<?= lang('create_user_validation_name_label') ?>" ng-model="addEvent.event_name">
+                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <input type="text" class="form-control" placeholder="<?= lang('index_email_th') ?>" ng-model="addEvent.event_desc">
+                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <input  id="event-all-day" type="checkbox" ng-model="addEvent.event_fallday" />
+                            </div>
+                            <div class="form-group has-feedback" >
+                                <span class="form-group-addon" id="sizing-addon2">Fecha</span>
+                                <input ng-disabled="addEvent.event_fallday" id="event-ffin" type="text" placeholder="DD-MM-YYYY" ng-model="addEvent.event_ffin" />
+                                <span class="form-group-addon" id="sizing-addon2">Hora</span>
+                                <input ng-disabled="addEvent.event_fallday" id="event-ffin" max="24" min="00" placeholder="00" type="number" ng-model="addEvent.event_hfin" />
+                                <span class="form-group-addon" id="sizing-addon2">Minutos</span>
+                                <input ng-disabled="addEvent.event_fallday" id="event-ffin" max="60" min="00" placeholder="00" type="number" ng-model="addEvent.event_mfin" />
+                            </div>
+                            
+                            <div class="form-group has-feedback" data-ng-init="getEvents()" >
+                                <span class="form-group-addon" id="sizing-addon2">Tipo</span>
+                                <select class="form-control">
+                                    <option ng-repeat="event in events"data-content="<span style='bacground-color: {{event.color}};'>{{event.nombre}}</span>"> {{event.nombre}} </option>
+                                    <option data-content="<i class='fa fa-buysellads'></i>">Relish</option>
+                                    <option class="icon-camera-retro">&#xf083; Now I show the pretty camera!</option>
+                                </select>
+                            </div>
+                            
+                            
+                            <div class="row">
+                                <div class="col-xs-4 form-inline">
+                                    <button type="submit" class="btn btn-primary btn-block btn-flat"><?= lang('create_user_submit_btn') ?></button>
+                                </div><!-- /.col -->
+                                <div class="col-xs-4 form-inline pull-right">
+                                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                                </div><!-- /.col -->
+                            </div>
+                        </form>        
+                    </div>
+                </div>
+                <pre> {{ addEvent }} </pre>
+                <div class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 </section><!-- /.content -->
 
 <?php addjs("assets/admin/plugins/fullcalendar/fullcalendar.min.js") ?>
@@ -217,6 +278,7 @@
 <?php addjs("assets/admin/plugins/angularjs/angular.sanitize.min.js") ?>
 <?php addjs("assets/admin/plugins/angularjs/ui-bootstrap-tpls-0.11.2.min.js") ?>
 <?php addjs("assets/admin/plugins/angularjs/dialogs.min.js") ?>
+<?php addjs("assets/admin/plugins/fullcalendar/fullcalendar.ini.js") ?>
 <?php addjs("assets/custom/js/ang_events.js") ?>
 
 

@@ -31,13 +31,47 @@ class Events extends CI_Controller{
         
     }
     
+    public function addEvent(){
+        $this->output->enable_profiler(false);
+
+        $response = new stdClass();
+        
+        $this->form_validation->set_rules('event_name',$this->lang->line('create_user_validation_fname_label'), 'required|min_length[5]|is_unique[eventos.nombre]');
+        $this->form_validation->set_rules('event_desc',$this->lang->line('create_user_validation_fname_label'), 'required|min_length[5]');
+        $this->form_validation->set_rules('event_ffin',$this->lang->line('create_user_validation_fname_label'), '');
+        $this->form_validation->set_rules('event_fini',$this->lang->line('create_user_validation_fname_label'), 'required');
+        $this->form_validation->set_rules('event_hfin',$this->lang->line('create_user_validation_fname_label'), 'numeric|max_length[2]');
+        $this->form_validation->set_rules('event_mfin',$this->lang->line('create_user_validation_fname_label'), 'numeric|max_length[2]');
+        
+        if ($this->form_validation->run() == true) {
+            if ($this->input->post('event_fallday') != null) {
+                $response->message = "vamoooossss";
+                    $this->output
+                            ->set_content_type('application/json')
+                            ->set_output(json_encode($response));
+            }else{
+                $response->message = "no vamooosss";
+                    $this->output
+                            ->set_content_type('application/json')
+                            ->set_output(json_encode($response));
+                
+            }
+        }else{
+            $response->message = "nonono";
+                    $this->output
+                            ->set_content_type('application/json')
+                            ->set_output(json_encode($response));
+        }
+        
+    }
+    
     public function create_type_event(){
                 $this->output->enable_profiler(false);
 
         $response = new stdClass();
             $this->form_validation->set_rules('event_name', $this->lang->line('create_user_validation_fname_label'), 'required|is_unique[tipos_even.nombre]');
             $this->form_validation->set_rules('event_desc', $this->lang->line('create_user_validation_email_label'), 'required|min_length[10]');
-            $this->form_validation->set_rules('event_color', $this->lang->line('create_user_validation_email_label'), 'required');
+            $this->form_validation->set_rules('event_color', $this->lang->line('create_user_validation_email_label'), 'required|is_unique[tipos_even.color]');
 
             if ($this->form_validation->run() == true) {
                 $name = $this->input->post('event_name');
@@ -58,7 +92,17 @@ class Events extends CI_Controller{
     }
     
     public function get_types(){
-        $this->events_model->selectAllTypes();
+        $this->output->enable_profiler(FALSE);
+
+        //If is an ajax requiest
+        if ($this->input->is_ajax_request()) {
+            $events = $this->events_model->selectAllTypes();
+            $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode($events));
+        } else {
+            redirect("admin/events", "refresh");
+        }
     }
     
     

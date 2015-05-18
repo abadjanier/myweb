@@ -23,12 +23,10 @@ class Events_model extends CI_Model{
     
     public function selectAllTypes() {
         $query = $this->db->get('tipos_even');
-        echo '<pre>'.var_dump($query->row())."</pre><br>";
-        echo $query->num_rows();
         if ($query->num_rows() > 0){
-//            return $query->row();
+            return $query->result();
         }else{
-//            return false;
+            return false;
         }
     }
 }
