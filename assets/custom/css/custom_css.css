@@ -15,6 +15,16 @@ select
     outline: 0;
 }
 
+.container-fluid{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.align-right{
+    text-align: right;
+}
+
+
 /****************************************
         HEADER
 ****************************************/
@@ -40,7 +50,6 @@ header #container-select #lenguage-selector{
     width: 100px;
     margin-left: 20px;
     border: 0;
-
     border-radius: 0px;
     cursor: pointer;
     font-size: 20px;
@@ -88,11 +97,11 @@ header #container-select i{
 
 
 .ddListArrow{
-  right: 12px!important;
-  top: 50%!important;
-  margin-top: -2px!important;
-  border: solid 5px transparent!important;
-  border-top: solid 5px #505050!important;
+    right: 12px!important;
+    top: 50%!important;
+    margin-top: -2px!important;
+    border: solid 5px transparent!important;
+    border-top: solid 5px #505050!important;
 }
 
 /****************************************
@@ -103,7 +112,7 @@ section#menu-home{
 
 }
 
-section#menu-home .menu-home-fundacion{
+section#menu-home .menu-home-fundacion, header#menu-top .menu-top-fundacion{
     background: url('../img/home/fundacio-home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -111,35 +120,35 @@ section#menu-home .menu-home-fundacion{
     background-position: center center;
 }
 
-section#menu-home .menu-home-benefactores{
+section#menu-home .menu-home-benefactores, header#menu-top .menu-top-benefactores{
     background: url('../img/home/benefactors-home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
-section#menu-home .menu-home-talleres{
+section#menu-home .menu-home-talleres, header#menu-top .menu-top-talleres{
     background: url('../img/home/tallers-home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
-section#menu-home .menu-home-pacobert{
+section#menu-home .menu-home-pacobert, header#menu-top .menu-top-pacobert{
     background: url('../img/home/pac-obert-home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
-section#menu-home .menu-home-cultura{
+section#menu-home .menu-home-cultura, header#menu-top .menu-top-cultura{
     background: url('../img/home/cultura-home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
-section#menu-home .menu-home-visita{
+section#menu-home .menu-home-visita, header#menu-top .menu-top-visita{
     background: url('../img/home/visita-home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -163,7 +172,7 @@ section#menu-home .menu-home-visita{
     width: 100%;
 }
 
-.sup-row-home:hover, .sub-row-home:hover, .menu-home-fundacion:hover{
+.sup-row-home:hover, .sub-row-home:hover, .menu-home-fundacion:hover, .menu-top-fundacion:hover{
     cursor: pointer;
     background: #FFF!important;
     color: #000!important;
@@ -171,6 +180,102 @@ section#menu-home .menu-home-visita{
     transition: 0.2s;
 }
 
+
+/****************************************
+        MENU TOP
+****************************************/
+
+header#menu-top{  
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 600;
+    color: #FFF;
+    text-align: center;
+    height: 250px!important;
+}
+
+header#menu-top #logotipo{
+    margin-top: 10px;
+}
+
+.menu-top-fundacion, .menu-top-benefactores, .menu-top-talleres, .menu-top-pacobert, .menu-top-cultura, .menu-top-visita{
+    height: 170px!important;
+    line-height: 170px!important;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+header#menu-top .sup-row-home, header#menu-top .sub-row-home{
+    height: 85px;
+    width: 100%;
+    line-height: 85px;
+}
+
+header#menu-top .ddListContainer{
+    margin-top:10px;
+    margin-right: 15px;
+}
+
+header#menu-top .menu-responsive i{
+    color: #000;
+    float: right;
+    font-size: 40px;
+    margin-top: 55px;
+    margin-right: 45px;
+}
+
+header#menu-top .menu-responsive i:hover{
+    cursor: pointer;
+}
+
+/****************************************
+        PAGE AIRPLANES
+****************************************/
+
+#info-airplanes{
+
+}
+
+#info-airplanes .title-airplane{
+    text-align: center;
+    color: #616161;
+    margin-bottom: 80px;
+    margin-top: 100px;
+}
+
+#info-airplanes .title-airplane h1{
+    font-size: 50px;
+    font-weight: 100;
+}
+
+#info-airplanes .image-airplane{
+    text-align: center;
+}
+
+#info-airplanes .image-airplane img{
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+#info-airplanes .features-airplane{
+    margin-top: 100px;
+}
+
+#info-airplanes .features-airplane table{
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+#info-airplanes .history-airplane{
+    margin-top: 100px;
+    max-width:95%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#info-airplanes .history-airplane>p{
+
+}
 
 /****************************************
         FOOTER
