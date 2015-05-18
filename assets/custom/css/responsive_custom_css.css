@@ -24,8 +24,9 @@
         float:none;
         text-align: center;
     }
-
-
+    .navbar-brand img{
+        width: 180px!important;
+    }
 }
 
 

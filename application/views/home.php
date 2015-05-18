@@ -1,36 +1,13 @@
-<head>
-    <meta charset="UTF-8">
-    <title>Home FPAC</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-
-    <!-- Bootstrap 3.3.2 -->
-    <link href="<?= base_url() ?>assets/admin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-
-    <!-- Font Awesome Icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
-    <!-- Custom CSS -->
-    <link href="<?= base_url() ?>assets/custom/css/custom_css.css" rel="stylesheet" type="text/css" />
-
-    <!-- Custom CSS Responsive -->
-    <link href="<?= base_url() ?>assets/custom/css/responsive_custom_css.css" rel="stylesheet" type="text/css" />
-
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-
-
-</head>
-
 <body>
     <header>
         <div class="container">
             <a class="navbar-brand" href="<?= base_url() ?>"> <img id="logotipo" src="<?= base_url() ?>assets/custom/img/logo.png"></a>
             <div id="container-select">
-              <i class="fa fa-globe"></i>
-                <select name="lenguage-selector" id="lenguage-selector">
-                    <option value="ES">ES</option>
-                    <option value="CA">CA</option>
-                    <option value="EN">EN</option>
+                <i class="fa fa-globe"></i>
+                <select id="lenguage-selector">
+                    <option value="ES" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/spain.png">ES</option>
+                    <option value="CA" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/catalonia.png">CA</option>
+                    <option value="EN" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/unitedkingdom.png">EN</option>
                 </select> 
             </div>
         </div>
@@ -67,18 +44,6 @@
             </div>
         </div>    
     </section>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 social-media-home">
-                    <i class="fa fa-facebook-square"></i>
-                    <i class="fa fa-twitter-square"></i>
-                    <i class="fa fa-rss-square"></i>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 footer-menu">
-                    <p>AVISO LEGAL | CONTACTA</p>
-                </div>
-            </div>
-    </footer>
 </body>
+
+
