@@ -233,12 +233,11 @@ header#menu-top .menu-responsive i:hover{
 ****************************************/
 
 #info-airplanes{
-
+    color: #616161;
 }
 
 #info-airplanes .title-airplane{
     text-align: center;
-    color: #616161;
     margin-bottom: 80px;
     margin-top: 100px;
 }
@@ -253,7 +252,6 @@ header#menu-top .menu-responsive i:hover{
 }
 
 #info-airplanes .image-airplane img{
-    max-width: 95%;
     margin: 0 auto;
 }
 
@@ -262,19 +260,43 @@ header#menu-top .menu-responsive i:hover{
 }
 
 #info-airplanes .features-airplane table{
-    max-width: 95%;
     margin: 0 auto;
 }
 
 #info-airplanes .history-airplane{
     margin-top: 100px;
-    max-width:95%;
     margin-right: auto;
     margin-left: auto;
 }
 
-#info-airplanes .history-airplane>p{
 
+/****************************************
+        _BACK PAGES
+****************************************/
+
+#back-pages{
+ position: fixed;
+  top: 50%;
+}
+
+#back-pages span{
+  background: #7C705F;
+  padding: 15px 30px;
+  color: #FFF;
+  font-weight: 600;
+  font-size: 17px;
+  text-transform: uppercase;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+      opacity: 1;
+}
+
+#back-pages span:hover{
+  background: #736758;
+  opacity: 1!important;
+      cursor: pointer;
 }
 
 /****************************************
@@ -308,3 +330,5 @@ footer .footer-menu p {
     font-size: 15px;
     cursor: pointer;
 }
+
+
