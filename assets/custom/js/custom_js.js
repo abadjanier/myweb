@@ -22,3 +22,37 @@ $(document).ready(function () {
         }
     });
 });
+
+
+// Scroll Sticky back button
+$(document).ready(function () {
+    var altura = $('#back-pages span').offset().top;
+
+    $(window).on('scroll', function () {
+        if ($(window).width() < 940) {
+            if ($(window).scrollTop() >= altura) {
+                $('#back-pages span').addClass('sticky-button');
+            } else {
+                $('#back-pages span').removeClass('sticky-button');
+            }
+        } else {
+            $('#back-pages span').removeClass('sticky-button');
+        }
+    });
+});
+
+
+
+// Click active menu responsive
+$(document).ready(function () {
+    $('#menu-top .fa-bars').on('click', function () {
+        $( "#menu-full-responsive" ).slideDown(800);
+    });
+});
+
+// Click active menu responsive
+$(document).ready(function () {
+    $('#menu-full-responsive .section-close').on('click', function () {
+        $( "#menu-full-responsive" ).slideUp(800);
+    });
+});
