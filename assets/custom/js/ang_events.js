@@ -25,6 +25,46 @@ app.controller('eventsCtrl', function ($scope, $http, $rootScope, $timeout, dial
 
         });
     };
+    
+    
+     $scope.ajaxInProgress = true;
+    $scope.getAll = function () {
+        $scope.ajaxInProgress = true;
+        $http({
+            method: 'GET',
+            url: base_url + "admin/events/getall",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }, // set the headers so angular passing info as form data (not request payload)
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            } // set the headers so angular passing info as form data (not request payload)
+        }).success(function (data) {
+            $scope.ajaxInProgress = false;
+            $('#calendar').fullCalendar( 'removeEvents' );
+                        $.each(data, function (idx, obj) {
+                            
+                            var newEvent = new Object();
+                            var f_start = obj.f_ini.split('-');
+                            var f_fin = obj.f_fin.split('-');
+                            if (obj.allday === '1') {
+                                newEvent.title = obj.nombre;
+                                newEvent.start = new Date(f_start[0],f_start[1]-1,f_start[2],obj.h_ini,obj.m_ini);
+                                newEvent.allDay = true;
+                                newEvent.color = obj.color;
+                            } else {
+                                newEvent.title = obj.nombre;
+                                newEvent.start = new Date(f_start[0],f_start[1]-1,f_start[2],obj.h_ini,obj.m_ini);
+                                newEvent.end = new Date(f_fin[0],f_fin[1]-1,f_fin[2],obj.h_fin,obj.m_fin);
+                                newEvent.allDay = false;
+                                newEvent.color = obj.color;
+                            }
+                            
+                            $('#calendar').fullCalendar('renderEvent', newEvent);
+                        });
+
+        });
+    };
 
 
     $scope.formData = {};
@@ -71,6 +111,7 @@ app.controller('eventsCtrl', function ($scope, $http, $rootScope, $timeout, dial
         
         $scope.addEvent.event_fini = d;
         //$scope.addRow();
+        if (!$scope.addEvent.event_fallday) delete $scope.addEvent.event_fallday;
 
         $scope.ajaxInProgress = true;
         $http({
@@ -86,20 +127,15 @@ app.controller('eventsCtrl', function ($scope, $http, $rootScope, $timeout, dial
                     $scope.ajaxInProgress = false;
                     console.log(data);
                   
-                    if (data) {
-                        $('#myModal2').modal('toggle');
-                        var newEvent = new Object();
-
-                        newEvent.title = "some text";
-                        newEvent.start = new Date();
-                        newEvent.allDay = false;
-                        $('#calendar').fullCalendar('renderEvent', newEvent);
-                        $scope.addEvent = {};
-
-
-                    } else {
+                    if (data.message == "true") {
                         $('#myModal2').modal('toggle');
                         $scope.addEvent = {};
+                        $scope.getAll();
+
+
+                    } else if(data.message != "error" && data.message != "true"){
+                        
+                        $scope.addEvent.errors = data.message;
                     }
                 });
 
@@ -211,27 +247,55 @@ app.controller('eventsCtrl', function ($scope, $http, $rootScope, $timeout, dial
 //        });
 //
 //    };
-});
 
 
-// page is now ready, initialize the calendar...
+
+
+
 
 $('#calendar').fullCalendar({
-    dayClick: day
+    dayClick: day,
+    header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+    },
+    buttonText: {
+        today: 'today',
+        month: 'month',
+        week: 'week',
+        day: 'day',
+    },
+    events: function(start, end, timezone, callback) {
+        $scope.getAll();
+    }
 });
+
 
 function day(date, jsEvent, view) {
     $('#event-all-day').val(date.format());
     $('#myModal2').modal('toggle');
     d = date.format();
-    alert('Clicked on: ' + date.format());
-
-
-    alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-
-    alert('Current view: ' + view.name);
+//    alert('Clicked on: ' + date.format());
+//
+//
+//    alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+//
+//    alert('Current view: ' + view.name);
 
     // change the day's background color just for fun
-    $(this).css('background-color', 'red');
+//    $(this).css('background-color', 'red');
 
 }
+
+
+
+
+});
+
+
+// page is now ready, initialize the calendar...
+
+
+
+
