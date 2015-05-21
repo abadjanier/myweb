@@ -30,34 +30,75 @@ class Events extends CI_Controller{
         $this->load->view("admin/index_admin_view",$data);
         
     }
+    public function getAll() {
+        $this->output->enable_profiler(false);
+        $this->output
+                            ->set_content_type('application/json')
+                            ->set_output(json_encode($this->events_model->getAllEvents()));
+    }
     
     public function addEvent(){
         $this->output->enable_profiler(false);
 
         $response = new stdClass();
         
-        $this->form_validation->set_rules('event_name',$this->lang->line('create_user_validation_fname_label'), 'required|min_length[5]|is_unique[eventos.nombre]');
+        $this->form_validation->set_rules('event_name',"", 'required|min_length[5]|is_unique[eventos.nombre]');
+        $this->form_validation->set_rules('event_type',"", 'required');
         $this->form_validation->set_rules('event_desc',$this->lang->line('create_user_validation_fname_label'), 'required|min_length[5]');
-        $this->form_validation->set_rules('event_ffin',$this->lang->line('create_user_validation_fname_label'), '');
+        $this->form_validation->set_rules('event_ffin',$this->lang->line('create_user_validation_fname_label'), 'min_length[8]');
         $this->form_validation->set_rules('event_fini',$this->lang->line('create_user_validation_fname_label'), 'required');
+        $this->form_validation->set_rules('event_hini',$this->lang->line('create_user_validation_fname_label'), 'required|numeric|max_length[2]');
+        $this->form_validation->set_rules('event_mini',$this->lang->line('create_user_validation_fname_label'), 'required|numeric|max_length[2]');
         $this->form_validation->set_rules('event_hfin',$this->lang->line('create_user_validation_fname_label'), 'numeric|max_length[2]');
         $this->form_validation->set_rules('event_mfin',$this->lang->line('create_user_validation_fname_label'), 'numeric|max_length[2]');
         
         if ($this->form_validation->run() == true) {
+            $user = $this->ion_auth->user()->row();
+                $nombre = $this->input->post('event_name');
+                $desc = $this->input->post('event_desc');
+                $fini = $this->input->post('event_fini');
+                $hini = $this->input->post('event_hini');
+                $mini = $this->input->post('event_mini');
+                $event_type = $this->input->post('event_type');
             if ($this->input->post('event_fallday') != null) {
-                $response->message = "vamoooossss";
+                if($this->events_model->insertEvent($nombre , $desc , $fini,$hini,$mini , $event_type , $user->id)){
+                    $response->message = "true";
+                    $response->events = $this->events_model->getAllEvents();
                     $this->output
                             ->set_content_type('application/json')
                             ->set_output(json_encode($response));
-            }else{
-                $response->message = "no vamooosss";
+                }else{
+                    $response->message = "error";
                     $this->output
                             ->set_content_type('application/json')
                             ->set_output(json_encode($response));
+                }
                 
+                
+                
+                
+            }else{
+                if ($this->input->post('event_ffin') != null && $this->input->post('event_hfin') != null && $this->input->post('event_mfin')) {
+                    $ffin = $this->input->post('event_ffin');
+                    $hfin = $this->input->post('event_hfin');
+                    $mfin = $this->input->post('event_mfin');
+
+                    if ($this->events_model->insertEvent($nombre, $desc, $fini, $hini, $mini, $event_type, $user->id, $ffin, $hfin, $mfin)) {
+                        $response->message = "true";
+                        $response->events = $this->events_model->getAllEvents();
+                        $this->output
+                                ->set_content_type('application/json')
+                                ->set_output(json_encode($response));
+                    } else {
+                        $response->message = "error";
+                        $this->output
+                                ->set_content_type('application/json')
+                                ->set_output(json_encode($response));
+                    }
+                }
             }
         }else{
-            $response->message = "nonono";
+            $response->message = validation_errors();
                     $this->output
                             ->set_content_type('application/json')
                             ->set_output(json_encode($response));
@@ -77,7 +118,7 @@ class Events extends CI_Controller{
                 $name = $this->input->post('event_name');
                 $desc = $this->input->post('event_desc');
                 $color = $this->input->post('event_color');
-                if ($this->form_validation->run() == true && $this->events_model->insertEvent($name, $desc, $color)) {
+                if ($this->form_validation->run() == true && $this->events_model->insertTypeEvent($name, $desc, $color)) {
                     $response->message = true;
                     $this->output
                             ->set_content_type('application/json')

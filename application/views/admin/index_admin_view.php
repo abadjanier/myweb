@@ -513,7 +513,24 @@
 
     <?php getJS()?>
     
+    <script type="text/javascript">
+      $(function () {
+        $('.selectpicker').selectpicker({
+            
+        });
+      });
+    </script>
     
+    <script type="text/javascript">
+            // When the document is ready
+            $(document).ready(function () {
+                
+                $('#example1').datepicker({
+                    format: "dd/mm/yyyy"
+                });  
+            
+            });
+        </script>
     
     <script type="text/javascript">
       $(function () {

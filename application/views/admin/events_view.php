@@ -1,7 +1,8 @@
 <?php addCSS("assets/admin/plugins/angularjs/dialogs.css") ?>
 <?php addCSS("assets/custom/css/ajax.loader.css") ?>
 <?php addCSS("assets/admin/plugins/fullcalendar/fullcalendar.min.css") ?>
-
+<?php addCSS("assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css") ?>
+<?php addCSS("assets/admin/plugins/datepicker/datepicker3.css") ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
@@ -108,63 +109,9 @@
     </div><!-- /.row -->
 
     <div class="row">
-        <div class="col-md-3">
-            <div class="box box-solid">
-                <div class="box-header with-border">
-                    <h4 class="box-title">Draggable Events</h4>
-                </div>
-                <div class="box-body">
-                    <!-- the events -->
-                    <div id='external-events'>
-                        <div class='external-event bg-green'>Lunch</div>
-                        <div class='external-event bg-yellow'>Go home</div>
-                        <div class='external-event bg-aqua'>Do homework</div>
-                        <div class='external-event bg-light-blue'>Work on UI design</div>
-                        <div class='external-event bg-red'>Sleep tight</div>
-                        <div class="checkbox">
-                            <label for='drop-remove'>
-                                <input type='checkbox' id='drop-remove' />
-                                remove after drop
-                            </label>
-                        </div>
-                    </div>
-                </div><!-- /.box-body -->
-            </div><!-- /. box -->
-            <div class="box box-solid">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Create Event</h3>
-                </div>
-                <div class="box-body">
-                    <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
-                      <!--<button type="button" id="color-chooser-btn" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown">Color <span class="caret"></span></button>-->
-                        <ul class="fc-color-picker" id="color-chooser">
-                            <li><a class="text-aqua" href="#"><i class="fa fa-square"></i></a></li>
-                            <li><a class="text-blue" href="#"><i class="fa fa-square"></i></a></li>
-                            <li><a class="text-light-blue" href="#"><i class="fa fa-square"></i></a></li>
-                            <li><a class="text-teal" href="#"><i class="fa fa-square"></i></a></li>																						
-                            <li><a class="text-yellow" href="#"><i class="fa fa-square"></i></a></li>
-                            <li><a class="text-orange" href="#"><i class="fa fa-square"></i></a></li>
-                            <li><a class="text-green" href="#"><i class="fa fa-square"></i></a></li>
-                            <li><a class="text-lime" href="#"><i class="fa fa-square"></i></a></li>
-                            <li><a class="text-red" href="#"><i class="fa fa-square"></i></a></li>
-                            <li><a class="text-purple" href="#"><i class="fa fa-square"></i></a></li>
-                            <li><a class="text-fuchsia" href="#"><i class="fa fa-square"></i></a></li>
-                            <li><a class="text-muted" href="#"><i class="fa fa-square"></i></a></li>
-                            <li><a class="text-navy" href="#"><i class="fa fa-square"></i></a></li>
-                        </ul>
-                    </div><!-- /btn-group -->
-                    <div class="input-group">
-                        <input id="new-event" type="text" class="form-control" placeholder="Event Title">
-                        <div class="input-group-btn">
-                            <button id="add-new-event" type="button" class="btn btn-primary btn-flat">Add</button>
-                        </div><!-- /btn-group -->
-                    </div><!-- /input-group -->
-                </div>
-            </div>
-        </div><!-- /.col -->
-        <div class="col-md-9">
+        <div class="col-md-12">
             <div class="box box-primary">
-                <div class="box-body no-padding">
+                <div class="box-body no-padding" data-ng-init="getAll()">
                     <!-- THE CALENDAR -->
                     <div id="calendar"></div>
                 </div><!-- /.box-body -->
@@ -222,6 +169,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="register-box-body">
+                        <div class="form-group has-feedback">
+                            <p>{{addEvent.errors}}</p>
+                            </div>
                         <form name="newUser" ng-submit="createEvent()">
                             <div class="form-group has-feedback">
                                 <input type="text" class="form-control" placeholder="<?= lang('create_user_validation_name_label') ?>" ng-model="addEvent.event_name">
@@ -232,23 +182,28 @@
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                             </div>
                             <div class="form-group has-feedback">
+                                <span class="form-group-addon" id="sizing-addon2">Hora</span>
+                                <input class="form-control" id="event-ffin" max="24" min="00" placeholder="00" type="number" ng-model="addEvent.event_hini" />
+                                <span class="form-group-addon" id="sizing-addon2">Minutos</span>
+                                <input class="form-control" id="event-ffin" max="60" min="00" placeholder="00" type="number" ng-model="addEvent.event_mini" />
+                            </div>
+                            <div class="form-group has-feedback">
+                                <span class="form-group-addon" id="sizing-addon2">Todo el día</span>
                                 <input  id="event-all-day" type="checkbox" ng-model="addEvent.event_fallday" />
                             </div>
                             <div class="form-group has-feedback" >
-                                <span class="form-group-addon" id="sizing-addon2">Fecha</span>
-                                <input ng-disabled="addEvent.event_fallday" id="event-ffin" type="text" placeholder="DD-MM-YYYY" ng-model="addEvent.event_ffin" />
+                                <span class="form-group-addon " id="sizing-addon2">Fecha acaba</span>
+                                <input type="text" ng-disabled="addEvent.event_fallday" name="idTourDateDetails" id="reservation" class="form-control datepicker" ng-model="addEvent.event_ffin">
                                 <span class="form-group-addon" id="sizing-addon2">Hora</span>
-                                <input ng-disabled="addEvent.event_fallday" id="event-ffin" max="24" min="00" placeholder="00" type="number" ng-model="addEvent.event_hfin" />
+                                <input class="form-control" ng-disabled="addEvent.event_fallday" id="event-ffin" max="24" min="00" placeholder="00" type="number" ng-model="addEvent.event_hfin" />
                                 <span class="form-group-addon" id="sizing-addon2">Minutos</span>
-                                <input ng-disabled="addEvent.event_fallday" id="event-ffin" max="60" min="00" placeholder="00" type="number" ng-model="addEvent.event_mfin" />
+                                <input class="form-control" ng-disabled="addEvent.event_fallday" id="event-ffin" max="60" min="00" placeholder="00" type="number" ng-model="addEvent.event_mfin" />
                             </div>
                             
                             <div class="form-group has-feedback" data-ng-init="getEvents()" >
                                 <span class="form-group-addon" id="sizing-addon2">Tipo</span>
-                                <select class="form-control">
-                                    <option ng-repeat="event in events"data-content="<span style='bacground-color: {{event.color}};'>{{event.nombre}}</span>"> {{event.nombre}} </option>
-                                    <option data-content="<i class='fa fa-buysellads'></i>">Relish</option>
-                                    <option class="icon-camera-retro">&#xf083; Now I show the pretty camera!</option>
+                                <select style="font-family: 'FontAwesome', Helvetica;" class="form-control" ng-model="addEvent.event_type">
+                                    <option style="color: {{event.color}};" value="{{event.id}}" ng-repeat="event in events">&#xf0c8; {{event.nombre}} </option>
                                 </select>
                             </div>
                             
@@ -261,6 +216,10 @@
                                     <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
                                 </div><!-- /.col -->
                             </div>
+                            <style>
+    .datepicker{z-index:1151 !important;}
+                            </style>
+                            
                         </form>        
                     </div>
                 </div>
@@ -271,8 +230,10 @@
             </div>
         </div>
     </div>
+    
+    
 </section><!-- /.content -->
-
+                      
 <?php addjs("assets/admin/plugins/fullcalendar/fullcalendar.min.js") ?>
 <?php addjs("assets/admin/plugins/angularjs/angular.min.js") ?>
 <?php addjs("assets/admin/plugins/angularjs/angular.sanitize.min.js") ?>
@@ -281,5 +242,13 @@
 <?php addjs("assets/admin/plugins/fullcalendar/fullcalendar.ini.js") ?>
 <?php addjs("assets/custom/js/ang_events.js") ?>
 
+<?php addjs("assets/admin/plugins/input-mask/jquery.inputmask.js") ?>
+<?php addjs("assets/admin/plugins/input-mask/jquery.inputmask.date.extensions.js") ?>
+<?php addjs("assets/admin/plugins/input-mask/jquery.inputmask.extensions.js") ?>
 
+
+<?php addjs("assets/admin/plugins/datepicker/bootstrap-datepicker.js") ?>
+<?php addjs("assets/admin/plugins/timepicker/bootstrap-timepicker.min.js") ?>
+
+<?php addjs("assets/custom/js/example.js") ?>
 
