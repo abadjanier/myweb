@@ -27,6 +27,10 @@
     .navbar-brand img{
         width: 180px!important;
     }
+    
+    .container-fluid [class*=""] {
+        display: none;
+    }
 }
 
 

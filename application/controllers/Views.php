@@ -13,6 +13,8 @@ class Views extends CI_Controller {
         $this->load->view('templates/header');
         $this->load->view('aviones');
         $this->load->view('templates/footer');
+        $this->load->view('templates/back_function');
         $this->load->view('templates/scripts');
+
     }
 }
