@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <script type="text/javascript">
+        window.base_url = <?php echo json_encode(base_url()); ?>;
+    </script>
     <meta charset="UTF-8">
     <title>AdminLTE 2 | Dashboard</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>

@@ -1,5 +1,4 @@
 var app = angular.module('usuarios', ['ui.bootstrap','dialogs.main']);
-var  base_url = "http://localhost/fpac/";
 
 app.controller('usersCtrl', function ($scope, $http,$rootScope,$timeout,dialogs) {
     $scope.ajaxInProgress = false;

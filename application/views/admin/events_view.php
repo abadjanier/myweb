@@ -113,6 +113,11 @@
             <div class="box box-primary">
                 <div class="box-body no-padding" data-ng-init="getAll()">
                     <!-- THE CALENDAR -->
+                    <style>
+                        .fc-day:hover {
+  background: #C7DEFF;
+}
+                    </style>
                     <div id="calendar"></div>
                 </div><!-- /.box-body -->
             </div><!-- /. box -->
@@ -224,6 +229,52 @@
                     </div>
                 </div>
                 <pre> {{ addEvent }} </pre>
+                <div class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Modal 3-->
+    <div class="modal fade" id="myModal3"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center" id="myModalLabel"><?= lang('create_user_heading') ?></h4>
+                </div>
+                <div class="modal-body" >
+                    <div class="register-box-body">
+                        <form name="newUser" ng-submit="processForm()">
+                            <div class="form-group has-feedback">
+                                <input hidden="" value="{{formData.pruebaid}}">
+                                <input id="prueba" ng-mouseenter="" ng-blur="show()"  type="text"  class="form-control" placeholder="<?= lang('create_user_validation_name_label') ?>"  data-ng-model="formData.prueba">
+                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <input type="text" class="form-control" placeholder="<?= lang('index_email_th') ?>" ng-model="formData.prueba2">
+                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <input id="background-color" type="color" ng-model="formData.event_color" />
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 form-inline">
+                                    <button type="submit" class="btn btn-primary btn-block btn-flat"><?= lang('create_user_submit_btn') ?></button>
+                                </div><!-- /.col -->
+                                <div class="col-xs-4 form-inline">
+                                    <button type="button" ng-click="deleteEvent(formData.pruebaid,formData.pruebaid)"  class="btn btn-primary btn-block btn-flat">Borrar evento</button>
+                                </div><!-- /.col -->
+                                <div class="col-xs-4 form-inline pull-right">
+                                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                                </div><!-- /.col -->
+                            </div>
+                        </form>        
+                    </div>
+                </div>
+                <pre> {{ formData }} </pre>
                 <div class="modal-footer">
                     
                 </div>

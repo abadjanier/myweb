@@ -106,6 +106,28 @@ class Events extends CI_Controller{
         
     }
     
+   public function deleteEvent($id){
+       $this->output->enable_profiler(false);
+        if ($this->__isAjax()){
+            $result = new stdClass();
+            if ($this->events_model->deleteEvents($id)){
+                $result->response = true;
+                $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode($result));
+            }else{
+                $result->response = false;
+                $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode($result));
+            }
+        }else{
+            redirect("admin/events", "refresh");
+        }
+       
+   }
+
+
     public function create_type_event(){
                 $this->output->enable_profiler(false);
 
