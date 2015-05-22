@@ -1,3 +1,5 @@
+//MEDIA QUERIE PERSONALIZADAS
+
 
 @media(max-width:767px){
 
@@ -24,29 +26,40 @@
         float:none;
         text-align: center;
     }
-    .navbar-brand img{
-        width: 180px!important;
-    }
-    
-    .container-fluid [class*=""] {
-        display: none;
-    }
-}
-
-
-@media(min-width:768px){
 
 }
 
 
+@media(max-width:940px){
+
+    /****************************************
+        BUTTON BACK
+     ****************************************/
+
+    #back-pages span{
+        position: absolute;
+        top: 220px;
+        opacity: 1!important;
+    }
+
+}
+
+@media(min-width:940px){
+        #back-pages span{
+        position: fixed;
+        top: 50%;
+        opacity: 1;
+    }
+}
 
 
-@media(min-width:992px){}
+/****************************************
+        MENU TOP
+****************************************/
+
+
+@media(max-width:1200px){
 
 
 
-
-
-
-
-@media(min-width:1200px){}
+}

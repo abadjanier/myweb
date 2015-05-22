@@ -1,4 +1,3 @@
-<body>
     <section id="info-airplanes">
         <div class="container">
             <div class="row">

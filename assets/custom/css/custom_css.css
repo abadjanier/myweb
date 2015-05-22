@@ -6,6 +6,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+body{
+
+}
+
 select 
 {
     -webkit-appearance: none;
@@ -15,7 +19,7 @@ select
     outline: 0;
 }
 
-.container-fluid{
+.no-paddings{
     padding-right: 0px;
     padding-left: 0px;
 }
@@ -191,11 +195,16 @@ header#menu-top{
     font-weight: 600;
     color: #FFF;
     text-align: center;
-    height: 250px!important;
+    height: 170px!important;
 }
 
 header#menu-top #logotipo{
     margin-top: 10px;
+}
+
+header#menu-top #logotipo {
+    width: 100%;
+    max-width: 200px;
 }
 
 .menu-top-fundacion, .menu-top-benefactores, .menu-top-talleres, .menu-top-pacobert, .menu-top-cultura, .menu-top-visita{
@@ -224,9 +233,46 @@ header#menu-top .menu-responsive i{
     margin-right: 45px;
 }
 
-header#menu-top .menu-responsive i:hover{
+header#menu-top .menu-responsive .icon-menu-top:hover{
     cursor: pointer;
+  color: #4C4C4C;
 }
+
+/****************************************
+        MENU TOP RESPONSIVE
+****************************************/
+
+#menu-full-responsive{
+    background: #FFF;
+    position: fixed;
+    width: 100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    z-index: 99999999;
+    display: none;
+}
+
+#menu-full-responsive .fa-times{
+    color: #4C4C4C;
+    padding: 25px 5px;
+    font-size: 40px;
+    -webkit-text-stroke: 4px white;
+    vertical-align: sub;
+}
+
+#menu-full-responsive span{
+    color: #4C4C4C;
+    font-size: 20px;
+}
+
+#menu-full-responsive .section-close{
+width: 150px;
+  height: auto;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
 
 /****************************************
         PAGE AIRPLANES
@@ -234,12 +280,13 @@ header#menu-top .menu-responsive i:hover{
 
 #info-airplanes{
     color: #616161;
+
 }
 
 #info-airplanes .title-airplane{
     text-align: center;
     margin-bottom: 80px;
-    margin-top: 100px;
+    margin-top: 190px;
 }
 
 #info-airplanes .title-airplane h1{
@@ -271,33 +318,38 @@ header#menu-top .menu-responsive i:hover{
 
 
 /****************************************
-        _BACK PAGES
+        BACK PAGES
 ****************************************/
 
-#back-pages{
- position: fixed;
-  top: 50%;
-}
 
 #back-pages span{
-  background: #7C705F;
-  padding: 15px 30px;
-  color: #FFF;
-  font-weight: 600;
-  font-size: 17px;
-  text-transform: uppercase;
+    background: #7C705F;
+    padding: 15px 30px;
+    color: #FFF;
+    font-weight: 600;
+    font-size: 17px;
+    text-transform: uppercase;
+    position: fixed;
+    top: 50%;
+    left: 0;
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
     -o-transition: 0.2s;
     transition: 0.2s;
-      opacity: 1;
+    opacity: 1;
 }
 
 #back-pages span:hover{
-  background: #736758;
-  opacity: 1!important;
-      cursor: pointer;
+    background: #736758;
+    opacity: 1!important;
+    cursor: pointer;
 }
+
+.sticky-button{
+    position: fixed!important;
+    top: 0!important;
+}
+
 
 /****************************************
         FOOTER
