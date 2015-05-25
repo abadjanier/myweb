@@ -96,7 +96,7 @@ class Events_model extends CI_Model{
     
     
     public function getAllEvents(){
-        $this->db->select('eventos.id,eventos.nombre,eventos.f_fin,eventos.f_ini,eventos.m_fin, eventos.h_fin,eventos.m_ini,eventos.h_ini,eventos.allday,tipos_even.color');
+        $this->db->select('eventos.id,eventos.tipo_evento_id,eventos.descripcion,eventos.nombre,eventos.f_fin,eventos.f_ini,eventos.m_fin, eventos.h_fin,eventos.m_ini,eventos.h_ini,eventos.allday,tipos_even.color');
         $this->db->from('eventos');
         $this->db->join('tipos_even', 'tipos_even.id = eventos.tipo_evento_id');
         $query = $this->db->get();

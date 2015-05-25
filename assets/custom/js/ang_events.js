@@ -40,6 +40,7 @@ app.controller('eventsCtrl', function ($scope, $http, $rootScope, $timeout, dial
             } // set the headers so angular passing info as form data (not request payload)
         }).success(function (data) {
             $scope.ajaxInProgress = false;
+            console.log(data);
             $('#calendar').fullCalendar( 'removeEvents' );
                         events = [];
                         $.each(data, function (idx, obj) {
@@ -48,7 +49,9 @@ app.controller('eventsCtrl', function ($scope, $http, $rootScope, $timeout, dial
                             var f_start = obj.f_ini.split('-');
                             var f_fin = obj.f_fin.split('-');
                             newEvent.id = obj.id;
-                            if (obj.allday === '1') {
+                            newEvent.desc = obj.descripcion;
+                            newEvent.type = obj.tipo_evento_id;
+                             if (obj.allday === '1') {
                                 newEvent.title = obj.nombre;
                                 newEvent.start = new Date(f_start[0],f_start[1]-1,f_start[2],obj.h_ini,obj.m_ini);
                                 newEvent.allDay = true;
@@ -173,7 +176,7 @@ app.controller('eventsCtrl', function ($scope, $http, $rootScope, $timeout, dial
 
                         if (data) {
                             // if successful, bind success message to message
-                             $('#myModal3').modal('hide');
+                             $('#myModal2').modal('hide');
                             $scope.getAll();
 
                         } else {
@@ -184,6 +187,11 @@ app.controller('eventsCtrl', function ($scope, $http, $rootScope, $timeout, dial
 
         });
 
+    };
+    
+    $scope.clearData = function () {
+        console.log('Clearing Data...');
+        $scope.addEvent = {};
     };
 //    
 //    
@@ -287,30 +295,48 @@ $('.fc-prev-button,.fc-next-button').click(function() {
 function eventClick(calEvent, jsEvent, view) {
 
         console.log('Event: ' + calEvent.start);
-        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-        alert('View: ' + view.name);
-
-        // change the border color just for fun
-        $(this).css('border-color', 'red');
-        $scope.formData.prueba = '';
-        $scope.formData.prueba2 = '';
         
-        $scope.formData.pruebaid = calEvent.id;
-        $scope.formData.prueba = calEvent.title;
-        $scope.formData.prueba2 = calEvent.start;
-        $('#prueba').html(calEvent.title);
-        $('#nombree').val(calEvent.title);
+        $scope.addEvent.event_id = calEvent.id;
+        $scope.addEvent.event_name = calEvent.title;
+        $scope.addEvent.event_desc = calEvent.desc;
+        var dStart = new Date(calEvent.start);
+        $('#reservation1').val(dStart.getFullYear()+'-'+(dStart.getMonth()+1)+'-'+dStart.getUTCDate());
+        var dEnd = new Date(calEvent.end);
         
-        $('#myModal3').modal('toggle');
+        $scope.addEvent.event_hini = dEnd.getHours();
+        $scope.addEvent.event_mini = dEnd.getMinutes();
+        $scope.addEvent.event_fallday = calEvent.allDay;
+        if (!calEvent.allDay){
+            $scope.addEvent.event_ffin = dEnd.getFullYear()+'-'+(dEnd.getMonth()+1)+'-'+dEnd.getUTCDate();
+             $scope.addEvent.event_hfin = dEnd.getHours();
+        $scope.addEvent.event_mfin = dEnd.getMinutes();
+        }else{
+           delete  $scope.addEvent.event_ffin;
+           delete  $scope.addEvent.event_hfin;
+           delete  $scope.addEvent.event_mfin;
+        }
+        $scope.addEvent.event_type = calEvent.type;
+        console.log(dStart.getUTCDate());
+        
+        
+        $('#myModal2').modal('toggle');
         $( "#prueba" ).blur();
 
     }
 
 
 function day(date, jsEvent, view) {
-    $('#event-all-day').val(date.format());
-    $('#myModal2').modal('toggle');
-    d = date.format();
+    
+    console.log(date.format()+'++++++++++');
+    var today = new Date();
+    $( "#clearData" ).trigger( "click" );
+        if (new Date(date.format()) >= new Date(today.getFullYear(),today.getMonth(),today.getUTCDate())){
+            $('#reservation1').val(date.format());
+            
+            $('#myModal2').modal('toggle');
+            d = date.format();
+        }
+    
     console.log(events);
 //    alert('Clicked on: ' + date.format());
 //
@@ -325,6 +351,9 @@ function day(date, jsEvent, view) {
 }
 
 
+$('#myModal2').on('hidden.bs.modal', function () {
+    $scope.clearData();
+});
 
 
 });
