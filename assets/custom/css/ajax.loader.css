@@ -10,38 +10,41 @@
     margin-left: -100px;
     margin-top: -40px;
 }
+#circleG{
+    width:177.33333333333334px;
+}
 
 .circleG{
-    background-color:#FFFFFF;
+    background-color:#8C8C8C;
     float:left;
-    height:54px;
-    margin-left:29px;
-    width:54px;
+    height:38px;
+    margin-left:20px;
+    width:38px;
     -moz-animation-name:bounce_circleG;
     -moz-animation-duration:1.9500000000000002s;
     -moz-animation-iteration-count:infinite;
     -moz-animation-direction:normal;
-    -moz-border-radius:36px;
+    -moz-border-radius:25px;
     -webkit-animation-name:bounce_circleG;
     -webkit-animation-duration:1.9500000000000002s;
     -webkit-animation-iteration-count:infinite;
     -webkit-animation-direction:normal;
-    -webkit-border-radius:36px;
+    -webkit-border-radius:25px;
     -ms-animation-name:bounce_circleG;
     -ms-animation-duration:1.9500000000000002s;
     -ms-animation-iteration-count:infinite;
     -ms-animation-direction:normal;
-    -ms-border-radius:36px;
+    -ms-border-radius:25px;
     -o-animation-name:bounce_circleG;
     -o-animation-duration:1.9500000000000002s;
     -o-animation-iteration-count:infinite;
     -o-animation-direction:normal;
-    -o-border-radius:36px;
+    -o-border-radius:25px;
     animation-name:bounce_circleG;
     animation-duration:1.9500000000000002s;
     animation-iteration-count:infinite;
     animation-direction:normal;
-    border-radius:36px;
+    border-radius:25px;
 }
 
 #circleG_1{
@@ -73,7 +76,7 @@
     }
 
     50%{
-        background-color:#26E0E0}
+        background-color:#FFFFFF}
 
     100%{
     }
@@ -85,7 +88,7 @@
     }
 
     50%{
-        background-color:#26E0E0}
+        background-color:#FFFFFF}
 
     100%{
     }
@@ -97,7 +100,7 @@
     }
 
     50%{
-        background-color:#26E0E0}
+        background-color:#FFFFFF}
 
     100%{
     }
@@ -109,7 +112,7 @@
     }
 
     50%{
-        background-color:#26E0E0}
+        background-color:#FFFFFF}
 
     100%{
     }
@@ -121,20 +124,9 @@
     }
 
     50%{
-        background-color:#26E0E0}
+        background-color:#FFFFFF}
 
     100%{
     }
 
-}
-
-
-
-.noselect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }

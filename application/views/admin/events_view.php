@@ -113,6 +113,11 @@
             <div class="box box-primary">
                 <div class="box-body no-padding" data-ng-init="getAll()">
                     <!-- THE CALENDAR -->
+                    <style>
+                        .fc-day:hover {
+  background: #C7DEFF;
+}
+                    </style>
                     <div id="calendar"></div>
                 </div><!-- /.box-body -->
             </div><!-- /. box -->
@@ -161,11 +166,11 @@
     
     <!-- Modal-2 -->
     <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content ">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title text-center" id="myModalLabel"><?= lang('create_user_heading') ?></h4>
+                    <button type="button" ng-click="clearData()"  class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center" id="myModalLabel">Nuevo Evento</h4>
                 </div>
                 <div class="modal-body">
                     <div class="register-box-body">
@@ -174,14 +179,16 @@
                             </div>
                         <form name="newUser" ng-submit="createEvent()">
                             <div class="form-group has-feedback">
-                                <input type="text" class="form-control" placeholder="<?= lang('create_user_validation_name_label') ?>" ng-model="addEvent.event_name">
-                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                <span class="form-group-addon" id="sizing-addon2">Nombre</span>
+                                <input type="text" class="form-control" placeholder="Nombre" ng-model="addEvent.event_name">
                             </div>
                             <div class="form-group has-feedback">
-                                <input type="text" class="form-control" placeholder="<?= lang('index_email_th') ?>" ng-model="addEvent.event_desc">
-                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                <span class="form-group-addon" id="sizing-addon2">Descripción</span>
+                                <input type="text" class="form-control" placeholder="Descripción" ng-model="addEvent.event_desc">
                             </div>
-                            <div class="form-group has-feedback">
+                            <div class="form-group has-feedback form-inline">
+                                <span class="form-group-addon " id="sizing-addon2">Fecha comienzo</span>
+                                <input type="text" disabled="" name="idTourDateDetails" id="reservation1" class="form-control datepicker" >
                                 <span class="form-group-addon" id="sizing-addon2">Hora</span>
                                 <input class="form-control" id="event-ffin" max="24" min="00" placeholder="00" type="number" ng-model="addEvent.event_hini" />
                                 <span class="form-group-addon" id="sizing-addon2">Minutos</span>
@@ -191,7 +198,7 @@
                                 <span class="form-group-addon" id="sizing-addon2">Todo el día</span>
                                 <input  id="event-all-day" type="checkbox" ng-model="addEvent.event_fallday" />
                             </div>
-                            <div class="form-group has-feedback" >
+                            <div class="form-group has-feedback form-inline " >
                                 <span class="form-group-addon " id="sizing-addon2">Fecha acaba</span>
                                 <input type="text" ng-disabled="addEvent.event_fallday" name="idTourDateDetails" id="reservation" class="form-control datepicker" ng-model="addEvent.event_ffin">
                                 <span class="form-group-addon" id="sizing-addon2">Hora</span>
@@ -209,11 +216,20 @@
                             
                             
                             <div class="row">
-                                <div class="col-xs-4 form-inline">
-                                    <button type="submit" class="btn btn-primary btn-block btn-flat"><?= lang('create_user_submit_btn') ?></button>
+                                <div  ng-show="!addEvent.event_id" class="col-xs-3 form-inline">
+                                    <button type="submit"  class="btn btn-primary btn-block btn-flat">Crear Evento</button>
                                 </div><!-- /.col -->
-                                <div class="col-xs-4 form-inline pull-right">
-                                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                                <div ng-show="addEvent.event_id"   class="col-xs-3 form-inline">
+                                    <button type="button"  ng-click="updateEvent(addEvent.event_id)" class="btn btn-primary btn-block btn-flat">Modificar</button>
+                                </div><!-- /.col -->
+                                <div class="col-xs-3 form-inline">
+                                    <button type="button" ng-click="deleteEvent(addEvent.event_id,addEvent.event_id)"  class="btn btn-primary btn-block btn-flat">Borrar evento</button>
+                                </div><!-- /.col -->
+                                <div class="col-xs-3 form-inline">
+                                    <button ng-click="clearData()" id="clearData" type="button" class="btn btn-primary btn-block btn-flat">Limpiar</button>
+                                </div><!-- /.col -->
+                                <div class="col-xs-3 form-inline pull-right">
+                                    <button type="button" ng-click="clearData()" class="btn btn-primary btn-flat btn-block btn-danger pull-right" data-dismiss="modal">Cerrar</button>
                                 </div><!-- /.col -->
                             </div>
                             <style>
@@ -224,6 +240,52 @@
                     </div>
                 </div>
                 <pre> {{ addEvent }} </pre>
+                <div class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Modal 3-->
+    <div class="modal fade" id="myModal3"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center" id="myModalLabel"><?= lang('create_user_heading') ?></h4>
+                </div>
+                <div class="modal-body" >
+                    <div class="register-box-body">
+                        <form name="newUser" ng-submit="processForm()">
+                            <div class="form-group has-feedback">
+                                <input hidden="" value="{{formData.pruebaid}}">
+                                <input id="prueba" ng-mouseenter="" ng-blur="show()"  type="text"  class="form-control" placeholder="<?= lang('create_user_validation_name_label') ?>"  data-ng-model="formData.prueba">
+                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <input type="text" class="form-control" placeholder="<?= lang('index_email_th') ?>" ng-model="formData.prueba2">
+                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <input id="background-color" type="color" ng-model="formData.event_color" />
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 form-inline">
+                                    <button type="submit" class="btn btn-primary btn-block btn-flat"><?= lang('create_user_submit_btn') ?></button>
+                                </div><!-- /.col -->
+                                <div class="col-xs-4 form-inline">
+                                    <button type="button" ng-click="deleteEvent(formData.pruebaid,formData.pruebaid)"  class="btn btn-primary btn-block btn-flat">Borrar evento</button>
+                                </div><!-- /.col -->
+                                <div class="col-xs-4 form-inline pull-right">
+                                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                                </div><!-- /.col -->
+                            </div>
+                        </form>        
+                    </div>
+                </div>
+                <pre> {{ formData }} </pre>
                 <div class="modal-footer">
                     
                 </div>

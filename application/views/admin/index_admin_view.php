@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <script type="text/javascript">
+        window.base_url = <?php echo json_encode(base_url()); ?>;
+    </script>
     <meta charset="UTF-8">
-    <title>AdminLTE 2 | Dashboard</title>
+    <title>FPAC ADMIN |<?= $title?></title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="<?= base_url()?>assets/admin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -60,10 +63,10 @@
                   <ul class="dropdown-menu" role="menu">
                       <li><!-- start message -->
                           <?php if ($this->session->idiom == 'spanish') { ?>
-                              <a role="menuitem" tabindex="-1" href="<?= base_url() ?>/lang/cat">
+                              <a role="menuitem" tabindex="-1" href="<?= base_url() ?>lang/cat">
                                   <img alt="" class="img-circle" src="<?= base_url(); ?>assets/global/img/flags/catalan.png"> Catala </a>
                           <?php } else { ?>
-                              <a role="menuitem" tabindex="-1" href="<?= base_url() ?>/lang/es">
+                              <a role="menuitem" tabindex="-1" href="<?= base_url() ?>lang/es">
                                   <img alt="" class="img-circle" src="<?= base_url(); ?>assets/global/img/flags/spanish.png"> Espanyol </a>
                           <?php } ?>
                       </li><!-- end message -->
@@ -328,11 +331,29 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active">
+            <li class="<?php if(isset($users)) echo "active "?> treeview">
               <a href="users">
                 <i class="fa fa-user"></i> <span>Usuarios</span>
               </a>
             </li>
+            <li class="<?php if(isset($events)) echo "active "?>treeview">
+              <a href="events">
+                <i class="fa fa-calendar"></i> <span>Eventos</span>
+              </a>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-pencil"></i>
+                <span>Blog</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu" style="display: none;">
+                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+              </ul>
+            </li>
+            <li class="treeview"><a href="#"><i class="fa fa-book"></i> Documentation</a></li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-files-o"></i>

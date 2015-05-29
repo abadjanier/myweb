@@ -43,7 +43,8 @@ class Users extends CI_Controller {
         $user = $this->ion_auth->user()->row();
          $data = array(
                     'page_content' => $vista,
-                    'user_name' => $user->username
+                    'user_name' => $user->username,
+                    'users' => true
                 );
         $this->load->view("admin/index_admin_view",$data);
     }

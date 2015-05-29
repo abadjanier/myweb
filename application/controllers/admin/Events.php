@@ -25,7 +25,8 @@ class Events extends CI_Controller{
         $user = $this->ion_auth->user()->row();
          $data = array(
                     'page_content' => $vista,
-                    'user_name' => $user->username
+                    'user_name' => $user->username,
+                    'events' => true
                 );
         $this->load->view("admin/index_admin_view",$data);
         
@@ -106,6 +107,123 @@ class Events extends CI_Controller{
         
     }
     
+   public function updateEvent($id){
+       $this->output->enable_profiler(false);
+
+        $response = new stdClass();
+        
+        $this->form_validation->set_rules('event_name',"", 'required|min_length[5]');
+        $this->form_validation->set_rules('event_type',"", 'required');
+        $this->form_validation->set_rules('event_desc',$this->lang->line('create_user_validation_fname_label'), 'required|min_length[5]');
+        $this->form_validation->set_rules('event_ffin',$this->lang->line('create_user_validation_fname_label'), 'min_length[8]');
+        $this->form_validation->set_rules('event_fini',$this->lang->line('create_user_validation_fname_label'), 'required');
+        $this->form_validation->set_rules('event_hini',$this->lang->line('create_user_validation_fname_label'), 'required|numeric|max_length[2]');
+        $this->form_validation->set_rules('event_mini',$this->lang->line('create_user_validation_fname_label'), 'required|numeric|max_length[2]');
+        $this->form_validation->set_rules('event_hfin',$this->lang->line('create_user_validation_fname_label'), 'numeric|max_length[2]');
+        $this->form_validation->set_rules('event_mfin',$this->lang->line('create_user_validation_fname_label'), 'numeric|max_length[2]');
+        
+        if ($this->form_validation->run() == true) {
+            $user = $this->ion_auth->user()->row();
+                $nombre = $this->input->post('event_name');
+                $desc = $this->input->post('event_desc');
+                $fini = $this->input->post('event_fini');
+                $hini = $this->input->post('event_hini');
+                $mini = $this->input->post('event_mini');
+                $event_type = $this->input->post('event_type');
+                
+                
+            if ($this->input->post('event_fallday') != null) {
+                $data = array(
+                'nombre' => $nombre,
+                'descripcion' => $desc,
+                'f_ini' => $fini,
+                'h_ini' => $hini,
+                'm_ini' => $mini,
+                'tipo_evento_id' => $event_type,
+                'allday' => true,
+                'f_fin' => $fini,
+                'h_fin' => '00',
+                'm_fin' => '00'
+                );
+                if($this->events_model->updateEvent($id, $data)){
+                    $response->message = "true";
+                    $response->events = $this->events_model->getAllEvents();
+                    $this->output
+                            ->set_content_type('application/json')
+                            ->set_output(json_encode($response));
+                }else{
+                    $response->message = "error";
+                    $this->output
+                            ->set_content_type('application/json')
+                            ->set_output(json_encode($response));
+                }
+                
+                
+                
+                
+            }else{
+                if ($this->input->post('event_ffin') != null && $this->input->post('event_hfin') != null && $this->input->post('event_mfin')) {
+                    $ffin = $this->input->post('event_ffin');
+                    $hfin = $this->input->post('event_hfin');
+                    $mfin = $this->input->post('event_mfin');
+                    $data = array(
+                        'nombre' => $nombre,
+                        'descripcion' => $desc,
+                        'f_ini' => $fini,
+                        'h_ini' => $hini,
+                        'm_ini' => $mini,
+                        'tipo_evento_id' => $event_type,
+                        'allday' => false,
+                        'f_fin' => $ffin,
+                        'h_fin' => $hfin,
+                        'm_fin' => $mfin
+                    );
+
+                    if ($this->events_model->updateEvent($id, $data)) {
+                        $response->message = "true";
+                        $response->events = $this->events_model->getAllEvents();
+                        $this->output
+                                ->set_content_type('application/json')
+                                ->set_output(json_encode($response));
+                    } else {
+                        $response->message = "error";
+                        $this->output
+                                ->set_content_type('application/json')
+                                ->set_output(json_encode($response));
+                    }
+                }
+            }
+        }else{
+            $response->message = validation_errors();
+                    $this->output
+                            ->set_content_type('application/json')
+                            ->set_output(json_encode($response));
+        }
+       
+   } 
+    
+   public function deleteEvent($id){
+       $this->output->enable_profiler(false);
+        if ($this->__isAjax()){
+            $result = new stdClass();
+            if ($this->events_model->deleteEvents($id)){
+                $result->response = true;
+                $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode($result));
+            }else{
+                $result->response = false;
+                $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode($result));
+            }
+        }else{
+            redirect("admin/events", "refresh");
+        }
+       
+   }
+
+
     public function create_type_event(){
                 $this->output->enable_profiler(false);
 
