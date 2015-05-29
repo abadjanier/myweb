@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="image-airplane">
-                        <img class="img-responsive" src="assets/custom/img/airplane.jpg">
+                        <img class="img-responsive" src="<?= base_url() ?>assets/custom/img/aviones/full-images/airplane.jpg">
                     </div>
                 </div>
             </div>
