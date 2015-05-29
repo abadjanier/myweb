@@ -219,8 +219,8 @@
                                 <div  ng-show="!addEvent.event_id" class="col-xs-3 form-inline">
                                     <button type="submit"  class="btn btn-primary btn-block btn-flat">Crear Evento</button>
                                 </div><!-- /.col -->
-                                <div ng-show="addEvent.event_id" class="col-xs-3 form-inline">
-                                    <button type="button"  class="btn btn-primary btn-block btn-flat">Modificar</button>
+                                <div ng-show="addEvent.event_id"   class="col-xs-3 form-inline">
+                                    <button type="button"  ng-click="updateEvent(addEvent.event_id)" class="btn btn-primary btn-block btn-flat">Modificar</button>
                                 </div><!-- /.col -->
                                 <div class="col-xs-3 form-inline">
                                     <button type="button" ng-click="deleteEvent(addEvent.event_id,addEvent.event_id)"  class="btn btn-primary btn-block btn-flat">Borrar evento</button>

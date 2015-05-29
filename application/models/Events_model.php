@@ -106,4 +106,20 @@ class Events_model extends CI_Model{
                return false; 
             }
     }
+    
+    
+    public function updateEvent($id = false, $data = false){
+        if ($id !== false){
+            $this->db->update('eventos', $data);
+
+
+            if ($this->db->affected_rows() > 0){
+                return true;
+            }else{
+               return false; 
+            }
+        }else{
+            return false;
+        }
+    }
 }

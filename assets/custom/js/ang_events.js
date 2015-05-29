@@ -54,12 +54,14 @@ app.controller('eventsCtrl', function ($scope, $http, $rootScope, $timeout, dial
                              if (obj.allday === '1') {
                                 newEvent.title = obj.nombre;
                                 newEvent.start = new Date(f_start[0],f_start[1]-1,f_start[2],obj.h_ini,obj.m_ini);
+                                newEvent.start2 = new Date(f_start[0],f_start[1]-1,f_start[2],obj.h_ini,obj.m_ini);
                                 newEvent.allDay = true;
                                 newEvent.color = obj.color;
                                 events.push(newEvent);
                             } else {
                                 newEvent.title = obj.nombre;
                                 newEvent.start = new Date(f_start[0],f_start[1]-1,f_start[2],obj.h_ini,obj.m_ini);
+                                newEvent.start2 = new Date(f_start[0],f_start[1]-1,f_start[2],obj.h_ini,obj.m_ini);
                                 newEvent.end = new Date(f_fin[0],f_fin[1]-1,f_fin[2],obj.h_fin,obj.m_fin);
                                 newEvent.allDay = false;
                                 newEvent.color = obj.color;
@@ -149,6 +151,46 @@ app.controller('eventsCtrl', function ($scope, $http, $rootScope, $timeout, dial
         console.log($scope.addEvent);
 
     };
+    
+    
+    $scope.addEvent = {};
+
+    $scope.updateEvent = function (id_event) {
+        
+        //$scope.addRow();
+        if (!$scope.addEvent.event_fallday) delete $scope.addEvent.event_fallday;
+
+        $scope.ajaxInProgress = true;
+        $http({
+            method: 'POST',
+            cache: false, // This caches the response to the request
+            url: base_url + "admin/events/updateEvent/"+id_event,
+            data: $.param($scope.addEvent), // pass in data as strings
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+        })
+                .success(function (data) {
+                    $scope.ajaxInProgress = false;
+                    console.log(data);
+                  
+                    if (data.message == "true") {
+                        $('#myModal2').modal('toggle');
+                        $scope.addEvent = {};
+                        $scope.getAll();
+
+
+                    } else if(data.message != "error" && data.message != "true"){
+                        
+                        $scope.addEvent.errors = data.message;
+                    }
+                });
+
+        console.log($scope.addEvent);
+
+    };
+    
+    
     
     $scope.show = function () {
         eventClick;
@@ -294,17 +336,17 @@ $('.fc-prev-button,.fc-next-button').click(function() {
 
 function eventClick(calEvent, jsEvent, view) {
 
-        console.log('Event: ' + calEvent.start);
+        console.log('Event: ' + calEvent.start2);
         
         $scope.addEvent.event_id = calEvent.id;
         $scope.addEvent.event_name = calEvent.title;
         $scope.addEvent.event_desc = calEvent.desc;
-        var dStart = new Date(calEvent.start);
+        var dStart = new Date(calEvent.start2);
         $('#reservation1').val(dStart.getFullYear()+'-'+(dStart.getMonth()+1)+'-'+dStart.getUTCDate());
         var dEnd = new Date(calEvent.end);
-        
-        $scope.addEvent.event_hini = dEnd.getHours();
-        $scope.addEvent.event_mini = dEnd.getMinutes();
+        $scope.addEvent.event_fini = $('#reservation1').val();
+        $scope.addEvent.event_hini = dStart.getHours();
+        $scope.addEvent.event_mini = dStart.getMinutes();
         $scope.addEvent.event_fallday = calEvent.allDay;
         if (!calEvent.allDay){
             $scope.addEvent.event_ffin = dEnd.getFullYear()+'-'+(dEnd.getMonth()+1)+'-'+dEnd.getUTCDate();
