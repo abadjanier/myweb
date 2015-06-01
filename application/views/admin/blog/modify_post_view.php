@@ -36,39 +36,36 @@
                     <li role="presentation" class=""><a href="#cast" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false">Castellano <img alt="" class="img-circle" width="20" src="http://localhost/fpac/assets/custom/img/lenguage/spain.png"></i></a></li>
                     <li role="presentation" class=""><a href="#ingl" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false">Ingles <img alt="" class="img-circle" width="20" src="http://localhost/fpac/assets/custom/img/lenguage/unitedkingdom.png"></i></a></li>
                 </ul>
-                <?= form_open_multipart(base_url() . 'admin/blog/addPost', array('name' => 'mi_form', 'id' => 'form', 'role' => 'form','class' => 'margin-bottom-40')); ?>
+                <?= form_open_multipart(base_url() . 'admin/blog/updatePost', array('name' => 'mi_form', 'id' => 'form', 'role' => 'form','class' => 'margin-bottom-40')); ?>
                 
                 <div id="myTabContent" class="tab-content">
                     <div role="tabpanel" class="tab-pane fade active in col-md-12 form-group" id="cat" aria-labelledby="home-tab">
                         <label for="titulo"> Titulo </label>
-                        <input name="titulo_cat" value="<?= set_value('titulo_cat') ?>" class="form-control">
+                        <input name="titulo_cat" value="<?= $posts[0]->titulo ?>" class="form-control">
                         <br><label for="contenido"> Contenido </label>
-                        <textarea name="contenido_cat" class="form-control tinyMCE"><?= set_value('contenido_cat') ?></textarea>
+                        <textarea name="contenido_cat" class="form-control tinyMCE"><?= $posts[0]->contenido ?></textarea>
+                        <input type="hidden" name="id_cat" value="<?= $posts[0]->id ?>">
                     </div>
                     <div role="tabpanel" class="tab-pane fade col-md-12 form-group" id="cast" aria-labelledby="profile-tab">
                         <label for="titulo"> Titulo </label>
-                        <input name="titulo_es" value="<?= set_value('titulo_es') ?>" class="form-control">
+                        <input name="titulo_es" value="<?= $posts[1]->titulo ?>" class="form-control">
                         
                         <br><label for="contenido"> Contenido </label>
-                        <textarea name="contenido_es" class="form-control tinyMCE"><?= set_value('contenido_es') ?></textarea>
+                        <textarea name="contenido_es" class="form-control tinyMCE"><?= $posts[1]->contenido ?></textarea>
+                        <input type="hidden" name="id_cast" value="<?= $posts[1]->id ?>">
                     </div>
                     <div role="tabpanel" class="tab-pane fade col-md-12 form-group" id="ingl" aria-labelledby="profile-tab">
 
                         <label for="titulo"> Titulo </label>
-                        <input name="titulo_en" value="<?= set_value('titulo_en') ?>" class="form-control">
+                        <input name="titulo_en" value="<?= $posts[2]->titulo ?>" class="form-control">
                         <br><label for="contenido"> Contenido </label>
-                        <textarea name="contenido_en" class="form-control tinyMCE"><?= set_value('contenido_en') ?></textarea>
+                        <textarea name="contenido_en" class="form-control tinyMCE"><?= $posts[2]->contenido ?></textarea>
+                        <input type="hidden" name="id_en" value="<?= $posts[2]->id ?>">
                     </div>
                     
-                    <div class="form-group form-inline col-md-12">
-                        <label for="categoria"> Categoria </label>
-                        <select class="form-control" name="categoria" ng-init="getCategorias()">
-                        <option value="{{categoria.id}}" ng-repeat="categoria in categories">&#xf0c8; {{categoria.nombre}} </option>
-                    </select>
-                    <button type="button" class="btn btn-primary btn-info right" data-toggle="modal" data-target="#myModal"><?= lang('index_create_user_link') ?></button>
-                    </div>
                     
                     <div>
+                        <input type="hidden" value="<?= $posts[0]->posts_id ?>" name="posts_id">
                         <?= form_submit('submit', 'Crear', 'class="btn btn-primary center-block"') ?>
                     </div>
                     
