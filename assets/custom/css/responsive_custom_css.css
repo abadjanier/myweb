@@ -73,6 +73,14 @@
     #article-blog .content-article{
         text-align: center;;
     }
+
+    /****************************************
+    ESPACIO FORMULARIO Y INFO CONTACTA
+    ****************************************/
+
+    #contacta .info-fpac {
+        margin-top: 65px;
+    }
 }
 
 
