@@ -26,33 +26,60 @@ $(document).ready(function () {
 
 // Scroll Sticky back button
 $(document).ready(function () {
-    var altura = $('#back-pages span').offset().top;
+    if ($('#back-pages span').index() != -1) {
+        var altura = $('#back-pages span').offset().top;
 
-    $(window).on('scroll', function () {
-        if ($(window).width() < 940) {
-            if ($(window).scrollTop() >= altura) {
-                $('#back-pages span').addClass('sticky-button');
+        $(window).on('scroll', function () {
+            if ($(window).width() < 940) {
+                if ($(window).scrollTop() >= altura) {
+                    $('#back-pages span').addClass('sticky-button');
+                } else {
+                    $('#back-pages span').removeClass('sticky-button');
+                }
             } else {
                 $('#back-pages span').removeClass('sticky-button');
             }
+        });
+    }
+});
+
+
+
+// Click active menu responsive
+$(document).ready(function () {
+    $('.icon-menu-top').click(function () {
+        if ($('#menu-full-responsive').css("margin-right") == "0px" && !$('#menu-full-responsive').is(':animated')) {
+            $('#menu-full-responsive').animate({"margin-right": "-100%"}, 'slow');
         } else {
-            $('#back-pages span').removeClass('sticky-button');
+            if (!$('#menu-full-responsive').is(':animated')) {
+                $('#menu-full-responsive').animate({'margin-right': "0%"}, 'slow');
+                setTimeout(function () {
+                    $('#menu-full-responsive .fa-times').css({'transform': "rotate(180deg)"});
+                }, 400);
+
+            }
         }
     });
 });
 
 
 
-// Click active menu responsive
-$(document).ready(function () {
-    $('#menu-top .fa-bars').on('click', function () {
-        $( "#menu-full-responsive" ).slideDown(800);
-    });
+// Close active menu responsive
+$('#menu-full-responsive .fa-times').click(function () {
+    $('#menu-full-responsive .fa-times').css({'transform': "rotate(-180deg)"});
+    setTimeout(function () {
+        $('#menu-full-responsive').animate({"margin-right": "-100%"}, 'slow');
+    }, 200);
 });
 
-// Click active menu responsive
-$(document).ready(function () {
-    $('#menu-full-responsive .section-close').on('click', function () {
-        $( "#menu-full-responsive" ).slideUp(800);
-    });
+
+// Close active menu responsive
+
+$('#list-airplanes .list-items').hover(function () {
+    $(this).prepend('<div id="howhow" style="opacity: 0.7;background: #FFF; width: 100%; height: 100%; position: absolute; z-index: 999999;"></div>');
+    $(this).find(".effect-top").css({"margin-top": "-40%", "color":"#000", "z-index":"99999999"});
+    }, 
+    function(){
+    $('#howhow').remove();
+    $(this).find(".effect-top").css({"margin-top": "0%","color":"", "z-index":""});
 });

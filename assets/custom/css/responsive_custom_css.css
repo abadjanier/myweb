@@ -33,7 +33,7 @@
 @media(max-width:940px){
 
     /****************************************
-        BUTTON BACK
+        BUTTON BACK PAGES
      ****************************************/
 
     #back-pages span{
@@ -45,7 +45,11 @@
 }
 
 @media(min-width:940px){
-        #back-pages span{
+
+    /****************************************
+    BUTTON BACK PAGES
+    ****************************************/
+    #back-pages span{
         position: fixed;
         top: 50%;
         opacity: 1;
@@ -53,13 +57,32 @@
 }
 
 
-/****************************************
-        MENU TOP
-****************************************/
+@media(max-width:991px){
+
+    /****************************************
+        PADDING COMMENTS RESPONSIVE
+    ****************************************/
+
+    #article-blog .area-comments .content-comment .comment, #article-blog .area-comments .content-comment .name-user{
+        padding: 20px;
+    }
+
+    /****************************************
+        CENTRANDO TEXTO EN RESPONSIVE
+    ****************************************/
+    #article-blog .content-article{
+        text-align: center;;
+    }
+}
 
 
-@media(max-width:1200px){
+@media(min-width: 1200px){
 
+    /****************************************
+        MENU TOP RESPONSIVE
+    ****************************************/
 
-
+    #menu-full-responsive{
+        display: none;
+    }
 }
