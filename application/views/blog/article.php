@@ -25,7 +25,7 @@
             </div>  
             <div class=" col-md-3 col-xs-12 tags-right">
                 <div class="col-xs-12">
-                    <h3>Etiquetas</h3>
+                    <h3>Categorias</h3>
                     <ul>
                         <li><a href="#">Fpac</a></li>
                         <li><a href="#">Voluntarios</a></li>
@@ -38,78 +38,91 @@
     </div>
 
 
-    <div class="container-fluid container-comments">
-        <div class="row">
-            <div class="container">
-                <div class="col-xs-12 area-comments">
-                    <div class="row row-comments">
-                        <p class="titles">Comentarios</p>
+    <div class="row">
+        <div class="container">
+            <div class="col-xs-12 area-comments">
+                <div class="row row-comments">
+                    <p class="titles">Comentarios</p> 
 
-                        <!-- Comentario individual -->
-                        <div class="col-xs-12 content-comment">
-                            <div class="col-md-3 col-xs-12 bg-name-user">
-                                <p class="name-user">
-                                    Antonio Morales
-                                </p>
-                            </div>
-                            <div class="col-md-9 col-xs-12 bg-comment">
-                                <p class="comment">Hola me fusta mucho este articulo de tupu</p>    
-                            </div>
-                        </div>
-                        <!--FIN Comentario individual -->    
-
-                        <!-- Comentario individual -->
-                        <div class="col-xs-12 content-comment">
+                    <!-- Comentario individual -->
+                    <div class="col-xs-12 content-comment">
+                        <div class="row">
                             <div class="col-md-3 col-xs-12 bg-name-user">
                                 <p class="name-user">
                                     Fuentansa vuelamares
                                 </p>
                             </div>
                             <div class="col-md-9 col-xs-12 bg-comment">
-                                <p class="comment">Lorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimu</p>    
+
+
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <p class="comment">Lorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsumLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimuLorem ipsum impsum tupusimu</p>    
+                                    </div>
+                                </div>
+                                
+                                <!--
+                                <div class="row">
+                                    <div class="col-xs-12 sub-coments-box">
+                                        <div class="row">
+                                            <hr>
+                                            <div class="col-xs-12">
+                                                <h3>Respuestas</h3>               
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-12 bg-subcoment-name">
+                                                        <p class="name-user">
+                                                            Antonio borrás
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-8 col-sm-12">
+                                                        <p>Subcoment</p> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                -->
+
+
                             </div>
                         </div>
                         <!--FIN Comentario individual -->   
 
-                        <!-- Comentario individual -->
-                        <div class="col-xs-12 content-comment">
-                            <div class="col-md-3 col-xs-12 bg-name-user">
-                                <p class="name-user">
-                                    Palermo Agustisimo
-                                </p>
-                            </div>
-                            <div class="col-md-9 col-xs-12 bg-comment">
-                                <p class="comment">Los post de esta asociación me encantan pero tu madre más</p>    
-                            </div>
-                        </div>
-                        <!--FIN Comentario individual -->   
 
                     </div>
+
+
                     <div class="row">
-                        <p class="titles">Escribe tu comentario:</p>
-                        <form role="form">
-                            <div class="form-group">
-                                <label for="nombre-form">Nombre:</label>
-                                <input type="text" class="form-control" id="nombre-form">
-                            </div>
-                            <div class="form-group">
-                                <label for="email-form">Email:</label>
-                                <input type="email" class="form-control" id="email-form">
-                            </div>
-                            <div class="form-group">
-                                <label for="website-form">Website:</label>
-                                <input type="text" class="form-control" id="website-form">
-                            </div>
-                            <div class="form-group">
-                                <label for="comentario-form">Comentario:</label>
-                                <textarea class="form-control" id="comentario-form"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-default button-form">Comentar</button>
-                        </form>   
+                        <div class="col-md-10 col-xs-12 form-comment">
+                            <p class="titles">Escribe tu comentario:</p>
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="nombre-form">Nombre:</label>
+                                    <input type="text" name="nombre" class="form-control" id="nombre-form">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email-form">Email:</label>
+                                    <input type="email" name="email" class="form-control" id="email-form">
+                                </div>
+                                <div class="form-group">
+                                    <label for="website-form">Website:</label>
+                                    <input type="text" name="website" class="form-control" id="website-form">
+                                </div>
+                                <div class="form-group">
+                                    <label for="comentario-form">Comentario:</label>
+                                    <textarea class="form-control" name="comentario" id="comentario-form"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-default button-form">Comentar</button>
+                            </form>   
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
