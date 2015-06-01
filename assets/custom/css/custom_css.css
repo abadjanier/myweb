@@ -22,6 +22,15 @@ label {
     font-weight: 300;
 }
 
+a{
+    text-decoration: none!important;
+    color: #FFF;
+}
+
+.active{
+    color: #FFF;
+    background-color: #000;
+}
 
 select 
 {
@@ -48,6 +57,10 @@ select
 
 .align-right{
     text-align: right;
+}
+
+.align-center{
+    text-align: center;
 }
 
 .title{
@@ -736,6 +749,35 @@ header#menu-top .menu-responsive .icon-menu-top:hover{
     margin-top: 80px;
     padding: 0px;
 }
+
+/****************************************
+        FUNDACIÓN
+****************************************/
+
+#fundacion{
+    margin-bottom: 80px;
+}
+
+
+#fundacion p{
+    font-weight: 300;
+    font-size: 17px;
+}
+
+#fundacion h2{
+    font-weight: 300;
+}
+
+#fundacion .img-fundacion{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+#fundacion .separador{
+    margin-top: 50px;
+}
+
 
 /****************************************
         FOOTER

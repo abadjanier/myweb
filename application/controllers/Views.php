@@ -11,7 +11,7 @@ class Views extends CI_Controller {
     function index() {
         $this->load->view('templates/head');
         $this->load->view('templates/header');
-        $this->load->view('contacta');
+        $this->load->view('fundacion');
         $this->load->view('templates/footer');
         $this->load->view('templates/scripts');
 
