@@ -332,23 +332,23 @@
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li class="<?php if(isset($users)) echo "active "?> treeview">
-              <a href="users">
+                <a href="<?= base_url()?>admin/users">
                 <i class="fa fa-user"></i> <span>Usuarios</span>
               </a>
             </li>
             <li class="<?php if(isset($events)) echo "active "?>treeview">
-              <a href="events">
+              <a href="<?= base_url()?>admin/events">
                 <i class="fa fa-calendar"></i> <span>Eventos</span>
               </a>
             </li>
-            <li class="treeview">
+            <li class="treeview <?php if(isset($blog)) echo "active "?>">
               <a href="#">
                 <i class="fa fa-pencil"></i>
                 <span>Blog</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu" style="display: none;">
-                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+                <ul class="treeview-menu "  <?php if(isset($blog)){ echo 'style="display: block;"';} else {echo 'style="display: none;"';}?> style="display: none;">
+                <li <?php if(isset($blog)) echo "class='active' "?> ><a href="<?= base_url()?>admin/blog/entradas"><i class="fa fa-circle-o"></i> Entradas</a></li>
                 <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
                 <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
               </ul>
