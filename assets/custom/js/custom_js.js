@@ -6,6 +6,7 @@ $(document).ready(function () {
             onSelected: function (index, value, text) {
                 // Show selected province in status panel
                 $('#fruitSelect').text(text + ' (value: ' + value + ')');
+                window.location.replace("http://localhost/fpac/lang/"+value);
             }
         });
     });

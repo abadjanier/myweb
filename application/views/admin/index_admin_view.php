@@ -349,7 +349,7 @@
               </a>
                 <ul class="treeview-menu "  <?php if(isset($blog)){ echo 'style="display: block;"';} else {echo 'style="display: none;"';}?> style="display: none;">
                 <li <?php if(isset($blog)) echo "class='active' "?> ><a href="<?= base_url()?>admin/blog/entradas"><i class="fa fa-circle-o"></i> Entradas</a></li>
-                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                <li <?php if(isset($categorias)) echo "class='active' "?>><a href="<?= base_url()?>admin/blog/categorias"><i class="fa fa-circle-o"></i> Categorias</a></li>
                 <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
               </ul>
             </li>

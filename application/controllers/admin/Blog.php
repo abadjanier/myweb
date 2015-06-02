@@ -44,6 +44,21 @@ class Blog extends CI_Controller{
         $this->load->view("admin/index_admin_view",$data);
     }
     
+    
+    public function categorias(){
+        $vista = $this->load->view('admin/blog/categorias_blog_view',"",true);
+        $user = $this->ion_auth->user()->row();
+         $data = array(
+                    'page_content' => $vista,
+                    'user_name' => $user->username,
+                    'title' => 'Categorias',
+                    'blog' => true,
+                    'categorias' => true
+                );
+        $this->load->view("admin/index_admin_view",$data);
+    }
+    
+    
     public function addPost(){
         
         $this->form_validation->set_rules('titulo_cat',"", 'required|is_unique[eventos.nombre]');
@@ -197,11 +212,13 @@ class Blog extends CI_Controller{
                 
                 
                 
+            }else{
+                redirect("admin/blog/entradas","refresh");
             } 
             
         }else {
                 
-                $user = $this->ion_auth->user()->row();
+            $user = $this->ion_auth->user()->row();
             $posts = new stdClass();
             $posts->post_1 = array(
                 'titulo' => $this->input->post('titulo_cat'),

@@ -173,7 +173,60 @@ class Blog_model extends CI_Model{
 //        die('kk');
     }
     
-    public function getPostsByTittle($title) {
+    
+    public function getPostByIdPost($id){
+        $idiom = ($this->session->idiom) ?  $this->session->idiom : $this->config->item('language');
+        $this->db->select('posts_lang.*,posts_lang_has_categorias.categorias_id');
+        $this->db->from('posts_lang');
+        $this->db->join('posts_lang_has_categorias', 'posts_lang.id = posts_lang_has_categorias.posts_lang_id');
+        $this->db->join('categorias', 'posts_lang_has_categorias.categorias_id = categorias.id');
+        $this->db->where('posts_lang.posts_id', $id);
+        $this->db->where('posts_lang.lang', $idiom);
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->result();
+        } else {
+            return false;
+        }
+//        echo '<pre>';
+//        echo var_dump($query->result());
+//        echo $this->db->last_query();
+//        echo '</pre>';
+//        die('kk');
+    }
+    
+    public function getPostsByCategory($category = false){
+        $idiom = ($this->session->idiom) ?  $this->session->idiom : $this->config->item('language');
+        $this->db->select('posts_lang.*,categorias.*');
+        $this->db->from('posts_lang');
+        $this->db->join('posts_lang_has_categorias', 'posts_lang.id = posts_lang_has_categorias.posts_lang_id');
+        $this->db->join('categorias', 'posts_lang_has_categorias.categorias_id = categorias.id');
+        $this->db->where('categorias.nombre_spanish', $category);
+        $this->db->where('posts_lang.lang', $idiom);
+        $query = $this->db->get();
+//        echo '<pre>';
+//        echo var_dump($query->result());
+//        echo '</pre>';
+//        echo $this->db->last_query();
+//        die('kk');
+        if ($query->num_rows() > 0) {
+            return $query->result();
+        } else {
+            return false;
+        }
+    }
+    
+    public function getPostsLimit($categoria,$inicio = false, $limite = false){
+        $idiom = ($this->session->idiom) ?  $this->session->idiom : $this->config->item('language');
+         if ($inicio !== false && $limite !== false){
+            $query = $this->db->query("SELECT `posts_lang`.*, `categorias`.* FROM `posts_lang` JOIN `posts_lang_has_categorias` ON `posts_lang`.`id` = `posts_lang_has_categorias`.`posts_lang_id` JOIN `categorias` ON `posts_lang_has_categorias`.`categorias_id` = `categorias`.`id` WHERE `categorias`.`nombre_".$idiom."` = '".$categoria."' AND `posts_lang`.`lang` = '".$idiom."' LIMIT ".$inicio." , ".$limite."");
+        }
+        
+        
+        return $query->result();
+    }
+
+        public function getPostsByTittle($title) {
         $this->db->like('titulo_post', $title);
         $query = $this->db->get('posts');
         if ($query->num_rows() > 0) {

@@ -26,4 +26,9 @@ class Lang extends CI_Controller {
 		$this->session->set_userdata(array("idiom" => "catalan"));		
 		redirect($_SERVER['HTTP_REFERER'], 'refresh');
 	}
+        
+        function en(){
+		$this->session->set_userdata(array("idiom" => "english"));		
+		redirect($_SERVER['HTTP_REFERER'], 'refresh');
+	}
 }

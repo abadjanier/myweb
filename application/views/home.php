@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-visita menu-home-sections">
                     <div class="sup-row-home">Visita</div>
-                    <div class="sub-row-home">Contacte</div>
+                    <a href="<?= base_url()?>contacta"><div class="sub-row-home">Contacte</div></a>
                 </div>
             </div>
         </div>    

@@ -23,7 +23,7 @@
 
                 <div class="col-xs-5 no-paddings">
                     <div class="col-xs-4 menu-top-pacobert">
-                        <div class="sup-row-home">Pac·Obert</div>
+                        <div class="sup-row-home"><a href="<?= base_url()?>pacobert">Pac·Obert</a></div>
                         <div class="sub-row-home">Jardí-Museu</div>
                     </div>
                     <div class="col-xs-4 menu-top-cultura">
@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-xs-4 menu-top-visita">
                         <div class="sup-row-home">Visita</div>
-                        <div class="sub-row-home">Contacte</div>
+                        <div class="sub-row-home"><a href="<?= base_url()?>contacta">Contacte</a></div>
                     </div>
                 </div>
             </div>
@@ -53,9 +53,9 @@
             <div class="row">
                 <div class="col-xs-12 align-right">
                     <select id="lenguage-selector">
-                        <option value="ES" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/spain.png">ES</option>
-                        <option value="CA" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/catalonia.png">CA</option>
-                        <option value="EN" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/unitedkingdom.png">EN</option>
+                        <option value="es" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/spain.png">ES</option>
+                        <option value="cat" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/catalonia.png">CA</option>
+                        <option value="en" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/unitedkingdom.png">EN</option>
                     </select>
                 </div>
             </div>
