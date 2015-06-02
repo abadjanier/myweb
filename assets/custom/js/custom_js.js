@@ -44,7 +44,6 @@ $(document).ready(function () {
 });
 
 
-
 // Click active menu responsive
 $(document).ready(function () {
     $('.icon-menu-top').click(function () {
@@ -63,7 +62,6 @@ $(document).ready(function () {
 });
 
 
-
 // Close active menu responsive
 $('#menu-full-responsive .fa-times').click(function () {
     $('#menu-full-responsive .fa-times').css({'transform': "rotate(-180deg)"});
@@ -77,9 +75,24 @@ $('#menu-full-responsive .fa-times').click(function () {
 
 $('#list-airplanes .list-items').hover(function () {
     $(this).prepend('<div id="howhow" style="opacity: 0.7;background: #FFF; width: 100%; height: 100%; position: absolute; z-index: 999999;"></div>');
-    $(this).find(".effect-top").css({"margin-top": "-40%", "color":"#000", "z-index":"99999999"});
-    }, 
-    function(){
-    $('#howhow').remove();
-    $(this).find(".effect-top").css({"margin-top": "0%","color":"", "z-index":""});
+    $(this).find(".effect-top").css({"margin-top": "-40%", "color": "#000", "z-index": "99999999"});
+},
+        function () {
+            $('#howhow').remove();
+            $(this).find(".effect-top").css({"margin-top": "0%", "color": "", "z-index": ""});
+        });
+
+
+// Activar checkbox de abajo una vez seleccionado lo de arriba.
+
+$('#check-colabora-activamente').click(function () {
+    $(".box-activamente").toggle(100);
+});
+
+$('#check-disponibilidad-remotas').click(function () {
+    $(".box-actividades-remotas").toggle(100);
+});
+
+$('#check-disponibilidad-presenciales').click(function () {
+    $(".box-actividades-presenciales").toggle(100);
 });

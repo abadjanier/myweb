@@ -770,6 +770,7 @@ header#menu-top .menu-responsive .icon-menu-top:hover{
 
 #fundacion .img-fundacion{
     max-width: 800px;
+    width: 100%;
     margin: 0 auto;
     padding: 25px;
 }
@@ -821,10 +822,35 @@ header#menu-top .menu-responsive .icon-menu-top:hover{
         SOCIOS
 ****************************************/
 
-#socios{
+#voluntarios{
     margin-bottom: 80px;
 }
 
+#voluntarios h3{
+    font-weight: 300;
+}
+
+#voluntarios form{
+    margin-top: 30px;
+}
+
+#voluntarios .text-informative{
+    font-size: 13px;
+    font-weight: 300;
+}
+
+
+#voluntarios .margin-top-elements{
+margin-top: 25px;
+}
+
+#voluntarios .margin-checkbox{
+    margin-top: 5px;
+}
+
+#voluntarios .box-activamente, #voluntarios .box-actividades-remotas, #voluntarios .box-actividades-presenciales {
+    display: none;
+}
 
 
 /****************************************
@@ -835,7 +861,9 @@ header#menu-top .menu-responsive .icon-menu-top:hover{
         margin-bottom: 80px;
 }
 
-
+#benefactores h3{
+    font-weight: 300;
+}
 
 
 /****************************************
