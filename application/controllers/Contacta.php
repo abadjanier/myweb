@@ -2,7 +2,7 @@
 
 
 
-class Main extends CI_Controller {
+class Contacta extends CI_Controller {
     //put your code here
     
     public function __construct() {
@@ -12,8 +12,12 @@ class Main extends CI_Controller {
     }
     
     public function index(){
-        $this->load->view('templates/head');
-        $this->load->view('home');
+        $data = array(
+            'contacta' => true
+        );
+         $this->load->view('templates/head');
+        $this->load->view('templates/header',$data);
+        $this->load->view('contacta');
         $this->load->view('templates/footer');
         $this->load->view('templates/scripts');
     }

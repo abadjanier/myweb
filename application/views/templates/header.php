@@ -5,15 +5,15 @@
             <div class="row hidden-md hidden-sm hidden-xs">
                 <div class="col-xs-5 no-paddings">
                     <div class="col-xs-4 menu-top-fundacion">
-                        <div class="">Fundación</div>
+                        <a href="<?= base_url()?>fundacio"><div class=""><?= $this->lang->line('menu_fundacion')?></div></a>
                     </div>
                     <div class="col-xs-4 menu-top-benefactores">
-                        <div class="sup-row-home">Benefactores</div>
-                        <div class="sub-row-home">Voluntarios</div>
+                        <a><div class="sup-row-home"><?= $this->lang->line('menu_benefactores')?></div></a>
+                        <a><div class="sub-row-home"><?= $this->lang->line('menu_voluntarios')?></div></a>
                     </div>
                     <div class="col-xs-4 menu-top-talleres">
-                        <div class="sup-row-home">Talleres</div>
-                        <div class="sub-row-home">Escuelas</div>
+                        <a href="<?= base_url()?>taller"><div class="sup-row-home"><?= $this->lang->line('menu_talleres')?></div></a>
+                        <a href="<?= base_url()?>escola"><div class="sub-row-home"><?= $this->lang->line('menu_escuelas')?></div></a>
                     </div>
                 </div>
 
@@ -23,16 +23,16 @@
 
                 <div class="col-xs-5 no-paddings">
                     <div class="col-xs-4 menu-top-pacobert">
-                        <div class="sup-row-home">Pac·Abierto</div>
-                        <div class="sub-row-home">Jardín-Museo</div>
+                       <a href="<?= base_url()?>pacobert"><div class="sup-row-home"><?= $this->lang->line('menu_pacabierto')?></div></a>
+                        <a href="<?= base_url()?>jardi"><div class="sub-row-home"><?= $this->lang->line('menu_jardinmuseo')?></div></a>
                     </div>
                     <div class="col-xs-4 menu-top-cultura">
-                        <div class="sup-row-home">Heritage</div>
-                        <div class="sub-row-home">Cultura</div>
+                        <a><div class="sup-row-home"><?= $this->lang->line('menu_heritage')?></div></a>
+                        <a href="<?= base_url()?>cultura"><div class="sub-row-home"><?= $this->lang->line('menu_cultura')?></div></a>
                     </div>
                     <div class="col-xs-4 menu-top-visita">
-                        <div class="sup-row-home">Visita</div>
-                        <div class="sub-row-home">Contacto</div>
+                        <a><div class="sup-row-home"><?= $this->lang->line('menu_visita')?></div></a>
+                        <a href="<?= base_url()?>contacta"><div class="sub-row-home"><?= $this->lang->line('menu_contacto')?></div></a>
                     </div>
                 </div>
             </div>
@@ -53,9 +53,9 @@
             <div class="row">
                 <div class="col-xs-12 align-right">
                     <select id="lenguage-selector">
-                        <option value="ES" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/spain.png">ES</option>
-                        <option value="CA" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/catalonia.png">CA</option>
-                        <option value="EN" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/unitedkingdom.png">EN</option>
+                        <option  value="es" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/spain.png">ES</option>
+                        <option value="cat" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/catalonia.png">CA</option>
+                        <option  value="en" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/unitedkingdom.png">EN</option>
                     </select>
                 </div>
             </div>
@@ -66,36 +66,36 @@
                 <i class="fa fa-times"></i>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-xs-12 menu-responsive-fundacio">Fundación</div>
+                        <a href="<?= base_url()?>fundacio"><div class="col-xs-12 menu-responsive-fundacio"><?= $this->lang->line('menu_fundacion')?></div></a>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 menu-responsive-benefactores">
-                            <div class="col-xs-6">Benefactores</div>
-                            <div class="col-xs-6">Voluntarios</div>
+                            <a><div class="col-xs-6"><?= $this->lang->line('menu_benefactores')?></div></a>
+                            <a><div class="col-xs-6"><?= $this->lang->line('menu_voluntarios')?></div></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 menu-responsive-talleres">
-                            <div class="col-xs-6">Talleres</div>
-                            <div class="col-xs-6">Escuela</div>
+                            <a href="<?= base_url()?>taller"><div class="col-xs-6"><?= $this->lang->line('menu_talleres')?></div></a>
+                            <a href="<?= base_url()?>escola"><div class="col-xs-6"><?= $this->lang->line('menu_escuelas')?></div></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 menu-responsive-pacobert">
-                            <div class="col-xs-6">Pac·Abierto</div>
-                            <div class="col-xs-6">Jardín-Museo</div>
+                            <a href="<?= base_url()?>pacobert"><div class="col-xs-6"><?= $this->lang->line('menu_pacabierto')?></div></a>
+                            <a href="<?= base_url()?>jardi"><div class="col-xs-6"><?= $this->lang->line('menu_jardinmuseo')?></div></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 menu-responsive-cultura">
-                            <div class="col-xs-6">Heritage</div>
-                            <div class="col-xs-6">Cultura</div>
+                            <a><div class="col-xs-6"><?= $this->lang->line('menu_heritage')?></div></a>
+                            <a href="<?= base_url()?>cultura"><div class="col-xs-6"><?= $this->lang->line('menu_cultura')?></div></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 menu-responsive-visita">
-                            <div class="col-xs-6">Visita</div>
-                            <div class="col-xs-6">Contacto</div>
+                            <a><div class="col-xs-6"><?= $this->lang->line('menu_visita')?></div></a>
+                            <a href="<?= base_url()?>contacta"><div class="col-xs-6"><?= $this->lang->line('menu_contacto')?></div></a>
                         </div>
                     </div>
                 </div>

@@ -3,13 +3,13 @@
         <div class="row">
             <div class="col-md-9 col-xs-12">
                 <div class="title-article">
-                    <h1>Iniciem nova estructura en la fpac. Nous espais de visites y nous avions en el 2015 per a tots els seguidors</h1>
+                    <h1><?= $post[0]->titulo ?></h1>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-11 col-lg-push-0 col-xs-push-1 autor-date">
-                <span>Admin, </span><span>16 de Noviembre de 2015</span>
+                <span><?= $post[0]->created_at ?></span>
             </div>  
         </div>
 
@@ -19,9 +19,7 @@
         <!-- Contenido post -->
         <div class="row">
             <div class=" col-md-9 col-xs-12 content-article">
-                <p>Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano</p>
-                <img class="img-responsive" src="<?php base_url() ?>assets/custom/img/posts/avion_post.jpg">
-                <p>Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano Lorem impsum hermano </p>
+                <?= $post[0]->contenido ?>
             </div>  
             <div class=" col-md-3 col-xs-12 tags-right">
                 <div class="col-xs-12">
@@ -45,6 +43,7 @@
                     <p class="titles">Comentarios</p> 
 
                     <!-- Comentario individual -->
+                    <div class="row">
                     <div class="col-xs-12 content-comment">
                         <div class="row">
                             <div class="col-md-3 col-xs-12 bg-name-user">
@@ -95,8 +94,8 @@
 
 
                     </div>
-
-
+                    
+                </div>
                     <div class="row">
                         <div class="col-md-10 col-xs-12 form-comment">
                             <p class="titles">Escribe tu comentario:</p>
