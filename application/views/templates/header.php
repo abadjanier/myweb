@@ -5,15 +5,15 @@
             <div class="row hidden-md hidden-sm hidden-xs">
                 <div class="col-xs-5 no-paddings">
                     <div class="col-xs-4 menu-top-fundacion">
-                        <div class="">Fundacio</div>
+                        <div class="">Fundación</div>
                     </div>
                     <div class="col-xs-4 menu-top-benefactores">
-                        <div class="sup-row-home">Benefactors</div>
-                        <div class="sub-row-home">Voluntaris</div>
+                        <div class="sup-row-home">Benefactores</div>
+                        <div class="sub-row-home">Voluntarios</div>
                     </div>
                     <div class="col-xs-4 menu-top-talleres">
-                        <div class="sup-row-home">Tallers</div>
-                        <div class="sub-row-home">Escola</div>
+                        <div class="sup-row-home">Talleres</div>
+                        <div class="sub-row-home">Escuelas</div>
                     </div>
                 </div>
 
@@ -27,7 +27,7 @@
                         <div class="sub-row-home">Jardí-Museu</div>
                     </div>
                     <div class="col-xs-4 menu-top-cultura">
-                        <div class="sup-row-home">Heritatge</div>
+                        <div class="sup-row-home">Heritage</div>
                         <div class="sub-row-home">Cultura</div>
                     </div>
                     <div class="col-xs-4 menu-top-visita">
@@ -66,36 +66,36 @@
                 <i class="fa fa-times"></i>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-xs-12 menu-responsive-fundacio">Fundació</div>
+                        <div class="col-xs-12 menu-responsive-fundacio">Fundación</div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 menu-responsive-benefactores">
-                            <div class="col-xs-6">Benefactors</div>
-                            <div class="col-xs-6">Voluntaris</div>
+                            <div class="col-xs-6">Benefactores</div>
+                            <div class="col-xs-6">Voluntarios</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 menu-responsive-talleres">
-                            <div class="col-xs-6">Tallers</div>
-                            <div class="col-xs-6">Escola</div>
+                            <div class="col-xs-6">Talleres</div>
+                            <div class="col-xs-6">Escuela</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 menu-responsive-pacobert">
-                            <div class="col-xs-6">Pac·Obert</div>
-                            <div class="col-xs-6">Jardí-Museu</div>
+                            <div class="col-xs-6">Pac·Abierto</div>
+                            <div class="col-xs-6">Jardín-Museo</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 menu-responsive-cultura">
-                            <div class="col-xs-6">Heritatge</div>
+                            <div class="col-xs-6">Heritage</div>
                             <div class="col-xs-6">Cultura</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 menu-responsive-visita">
                             <div class="col-xs-6">Visita</div>
-                            <div class="col-xs-6">Contacte</div>
+                            <div class="col-xs-6">Contacto</div>
                         </div>
                     </div>
                 </div>

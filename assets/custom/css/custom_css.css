@@ -22,6 +22,15 @@ label {
     font-weight: 300;
 }
 
+a{
+    text-decoration: none!important;
+    color: #FFF;
+}
+
+.active{
+    color: #FFF;
+    background-color: #000;
+}
 
 select 
 {
@@ -32,7 +41,7 @@ select
     outline: 0;
 }
 
-.form-control, form .btn-default{
+.form-control, .btn-default{
     border-radius: 0px;
     border-color: #000;
 }
@@ -48,6 +57,10 @@ select
 
 .align-right{
     text-align: right;
+}
+
+.align-center{
+    text-align: center;
 }
 
 .title{
@@ -716,14 +729,14 @@ header#menu-top .menu-responsive .icon-menu-top:hover{
 
 #contacta .info-fpac{
     font-weight: 300;
-  font-size: 18px;
-  margin-top: 20px;
+    font-size: 18px;
+    margin-top: 20px;
 }
 
 #contacta .info-fpac ul{
     list-style: none;
-      padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 #contacta .info-fpac ul li:first-child{
@@ -736,6 +749,94 @@ header#menu-top .menu-responsive .icon-menu-top:hover{
     margin-top: 80px;
     padding: 0px;
 }
+
+/****************************************
+        FUNDACIÓN
+****************************************/
+
+#fundacion{
+    margin-bottom: 80px;
+}
+
+
+#fundacion p{
+    font-weight: 300;
+    font-size: 17px;
+}
+
+#fundacion h2{
+    font-weight: 300;
+}
+
+#fundacion .img-fundacion{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+#fundacion .separador{
+    margin-top: 50px;
+}
+
+
+/****************************************
+        EVENTOS
+****************************************/
+
+
+#eventos{
+    margin-bottom: 80px;
+}
+
+#eventos h3{
+    font-weight: 400;
+}
+
+#eventos p{
+    font-weight: 300;
+}
+
+#eventos .single-event{
+    box-shadow: 8px 11px 4px -8px #E4E4E4;
+    padding: 35px;
+}
+
+
+#eventos .single-event .date{
+    text-align: center;
+    margin-top: 30px; 
+}
+
+#eventos .single-event .date p{
+    font-weight: 400;
+}
+
+#eventos .single-event .fa-calendar-o{
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+
+/****************************************
+        SOCIOS
+****************************************/
+
+#socios{
+    margin-bottom: 80px;
+}
+
+
+
+/****************************************
+        BENEFACTORES
+****************************************/
+
+#benefactores{
+        margin-bottom: 80px;
+}
+
+
+
 
 /****************************************
         FOOTER

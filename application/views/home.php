@@ -18,23 +18,23 @@
     <section id="menu-home">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-fundacion menu-home-sections">Fundació</div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-fundacion menu-home-sections">Fundación</div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-benefactores menu-home-sections">
-                    <div class="sup-row-home">Benefactors</div>
-                    <div class="sub-row-home">Voluntaris</div>
+                    <div class="sup-row-home">Benefactores</div>
+                    <div class="sub-row-home">Voluntarios</div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-talleres menu-home-sections">
-                    <div class="sup-row-home">Tallers</div>
-                    <div class="sub-row-home">Escola</div>
+                    <div class="sup-row-home">Talleres</div>
+                    <div class="sub-row-home">Escuela</div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-pacobert menu-home-sections">
-                    <div class="sup-row-home">Pac·Obert</div>
-                    <div class="sub-row-home">Jardí-Museu</div>
+                    <div class="sup-row-home">Pac·Obierto</div>
+                    <div class="sub-row-home">Jardín-Museo</div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-cultura menu-home-sections">
-                    <div class="sup-row-home">Heritatge</div>
+                    <div class="sup-row-home">Heritage</div>
                     <div class="sub-row-home">Cultura</div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-visita menu-home-sections">
