@@ -43,6 +43,7 @@
                     <p class="titles">Comentarios</p> 
 
                     <!-- Comentario individual -->
+                    <div class="row">
                     <div class="col-xs-12 content-comment">
                         <div class="row">
                             <div class="col-md-3 col-xs-12 bg-name-user">
@@ -93,8 +94,8 @@
 
 
                     </div>
-
-
+                    
+                </div>
                     <div class="row">
                         <div class="col-md-10 col-xs-12 form-comment">
                             <p class="titles">Escribe tu comentario:</p>

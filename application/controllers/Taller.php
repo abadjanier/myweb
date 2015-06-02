@@ -7,6 +7,8 @@ class Taller extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
+        $idiom = (empty($this->session->idiom)) ?  $this->session->idiom : $this->config->item('language');
+         $this->lang->load('menu', $idiom);
         $this->load->model('blog_model');
     }
     
@@ -24,7 +26,7 @@ class Taller extends CI_Controller {
         }
         
         $this->load->library('pagination');
-         $config['base_url'] = base_url().'pacobert/';
+         $config['base_url'] = base_url().'taller/';
         $config['total_rows'] = count($this->blog_model->getPostsByCategory('TALLER'));
         $config['per_page'] = $limite;
         $config['full_tag_open'] = '<ul class="pagination">';
@@ -48,7 +50,8 @@ class Taller extends CI_Controller {
         $this->pagination->initialize($config);
         
         $data = array(
-            'posts' => $this->blog_model->getPostsLimit('TALLER',$inicio,$limite)
+            'posts' => $this->blog_model->getPostsLimit('TALLER',$inicio,$limite),
+            'categoria' => $this->lang->line('menu_talleres')
         );
         
         
@@ -73,7 +76,7 @@ class Taller extends CI_Controller {
         $this->load->view('templates/footer');
         $this->load->view('templates/scripts');
         }else{
-            redirect("pacobert","refresh");
+            redirect("taller","refresh");
         }
         
         

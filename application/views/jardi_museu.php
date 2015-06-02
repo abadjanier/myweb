@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h1 class="title">Historia</h1>
+                <h1 class="title"><?= $this->lang->line('menu_jardinmuseo')?></h1>
                             <hr>
             </div>
         </div>

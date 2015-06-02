@@ -53,5 +53,8 @@ $route['default_controller'] = 'main';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = true;
 $route['pacobert/(:num)'] = 'pacobert/index/$1';
+$route['cultura/(:num)'] = 'cultura/index/$1';
+$route['taller/(:num)'] = 'taller/index/$1';
+$route['escola/(:num)'] = 'escola/index/$1';
 
 $route['admin'] = 'admin/auth';

@@ -219,7 +219,7 @@ class Blog_model extends CI_Model{
     public function getPostsLimit($categoria,$inicio = false, $limite = false){
         $idiom = ($this->session->idiom) ?  $this->session->idiom : $this->config->item('language');
          if ($inicio !== false && $limite !== false){
-            $query = $this->db->query("SELECT `posts_lang`.*, `categorias`.* FROM `posts_lang` JOIN `posts_lang_has_categorias` ON `posts_lang`.`id` = `posts_lang_has_categorias`.`posts_lang_id` JOIN `categorias` ON `posts_lang_has_categorias`.`categorias_id` = `categorias`.`id` WHERE `categorias`.`nombre_".$idiom."` = '".$categoria."' AND `posts_lang`.`lang` = '".$idiom."' LIMIT ".$inicio." , ".$limite."");
+            $query = $this->db->query("SELECT `posts_lang`.*, `categorias`.* FROM `posts_lang` JOIN `posts_lang_has_categorias` ON `posts_lang`.`id` = `posts_lang_has_categorias`.`posts_lang_id` JOIN `categorias` ON `posts_lang_has_categorias`.`categorias_id` = `categorias`.`id` WHERE `categorias`.`nombre_spanish` = '".$categoria."' AND `posts_lang`.`lang` = '".$idiom."' ORDER BY created_at DESC LIMIT ".$inicio." , ".$limite." ");
         }
         
         

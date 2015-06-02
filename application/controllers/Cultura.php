@@ -2,7 +2,7 @@
 
 
 
-class Pacobert extends CI_Controller {
+class Cultura extends CI_Controller {
     //put your code here
     
     public function __construct() {
@@ -26,8 +26,8 @@ class Pacobert extends CI_Controller {
         }
         
         $this->load->library('pagination');
-         $config['base_url'] = base_url().'pacobert/';
-        $config['total_rows'] = count($this->blog_model->getPostsByCategory('FPAC OBERT'));
+         $config['base_url'] = base_url().'cultura/';
+        $config['total_rows'] = count($this->blog_model->getPostsByCategory('CULTURA'));
         $config['per_page'] = $limite;
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = "</ul>";
@@ -50,8 +50,8 @@ class Pacobert extends CI_Controller {
         $this->pagination->initialize($config);
         
         $data = array(
-            'posts' => $this->blog_model->getPostsLimit('FPAC OBERT',$inicio,$limite),
-            'categoria' => $this->lang->line('menu_pacabierto')
+            'posts' => $this->blog_model->getPostsLimit('CULTURA',$inicio,$limite),
+            'categoria' => $this->lang->line('menu_cultura')
         );
         
         
@@ -76,7 +76,7 @@ class Pacobert extends CI_Controller {
         $this->load->view('templates/footer');
         $this->load->view('templates/scripts');
         }else{
-            redirect("pacobert","refresh");
+            redirect("cultura","refresh");
         }
         
         

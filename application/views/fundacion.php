@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row separador">
             <div class="col-xs-12">
-                <h1 class="title">Fundación</h1>
+                <h1 class="title"><?=$this->lang->line('menu_fundacion')?></h1>
             </div>
         </div>
         <div class="row">
@@ -45,7 +45,7 @@
             </div>  
         </div>
         <div class="row">
-            <img class="img-responsive img-fundacion" src="<?= base_url() ?>assets/custom/img/fundacion/img_3.jpg">
+            <img class="img-responsive img-fundacion" src="<?= base_url() ?>assets/custom/img/fundacion/img_3.JPG">
         </div>
     </div>
 </section>

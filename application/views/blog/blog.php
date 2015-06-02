@@ -2,8 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h1 class="title">Blog</h1>
-                <h2 class="sub-title">CATEGORÍA: </h2><h3 class="sub-title">FPAC</h3>
+                <h1 class="title"><?= $categoria ?></h1>
                 <hr>
             </div>
         </div>

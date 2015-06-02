@@ -2,7 +2,7 @@
 
 
 
-class Contacta extends CI_Controller {
+class Jardi extends CI_Controller {
     //put your code here
     
     public function __construct() {
@@ -17,7 +17,7 @@ class Contacta extends CI_Controller {
         );
          $this->load->view('templates/head');
         $this->load->view('templates/header',$data);
-        $this->load->view('contacta');
+        $this->load->view('jardi_museu');
         $this->load->view('templates/footer');
         $this->load->view('templates/scripts');
     }
