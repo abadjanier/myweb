@@ -8,8 +8,8 @@
                         <a href="<?= base_url()?>fundacio"><div class=""><?= $this->lang->line('menu_fundacion')?></div></a>
                     </div>
                     <div class="col-xs-4 menu-top-benefactores">
-                        <a><div class="sup-row-home"><?= $this->lang->line('menu_benefactores')?></div></a>
-                        <a><div class="sub-row-home"><?= $this->lang->line('menu_voluntarios')?></div></a>
+                        <a href="<?= base_url()?>benefactores"><div class="sup-row-home"><?= $this->lang->line('menu_benefactores')?></div></a>
+                        <a href="<?= base_url()?>voluntarios"><div class="sub-row-home"><?= $this->lang->line('menu_voluntarios')?></div></a>
                     </div>
                     <div class="col-xs-4 menu-top-talleres">
                         <a href="<?= base_url()?>taller"><div class="sup-row-home"><?= $this->lang->line('menu_talleres')?></div></a>
@@ -31,7 +31,7 @@
                         <a href="<?= base_url()?>cultura"><div class="sub-row-home"><?= $this->lang->line('menu_cultura')?></div></a>
                     </div>
                     <div class="col-xs-4 menu-top-visita">
-                        <a><div class="sup-row-home"><?= $this->lang->line('menu_visita')?></div></a>
+                        <a href="<?= base_url()?>visitas"><div class="sup-row-home"><?= $this->lang->line('menu_visita')?></div></a>
                         <a href="<?= base_url()?>contacta"><div class="sub-row-home"><?= $this->lang->line('menu_contacto')?></div></a>
                     </div>
                 </div>
@@ -70,8 +70,8 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 menu-responsive-benefactores">
-                            <a><div class="col-xs-6"><?= $this->lang->line('menu_benefactores')?></div></a>
-                            <a><div class="col-xs-6"><?= $this->lang->line('menu_voluntarios')?></div></a>
+                            <a href="<?= base_url()?>benefactores"><div class="col-xs-6"><?= $this->lang->line('menu_benefactores')?></div></a>
+                            <a href="<?= base_url()?>voluntarios"><div class="col-xs-6"><?= $this->lang->line('menu_voluntarios')?></div></a>
                         </div>
                     </div>
                     <div class="row">
@@ -94,7 +94,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 menu-responsive-visita">
-                            <a><div class="col-xs-6"><?= $this->lang->line('menu_visita')?></div></a>
+                            <a href="<?= base_url()?>visitas"><div class="col-xs-6"><?= $this->lang->line('menu_visita')?></div></a>
                             <a href="<?= base_url()?>contacta"><div class="col-xs-6"><?= $this->lang->line('menu_contacto')?></div></a>
                         </div>
                     </div>

@@ -18,8 +18,8 @@
             <div class="row">
                 <a href="<?= base_url()?>fundacio"><div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-fundacion menu-home-sections"><?= $this->lang->line('menu_fundacion')?></div></a>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-benefactores menu-home-sections">
-                    <a><div class="sup-row-home"><?= $this->lang->line('menu_benefactores')?></div></a>
-                    <a><div class="sub-row-home"><?= $this->lang->line('menu_voluntarios')?></div></a>
+                    <a href="<?= base_url()?>benefactores"><div class="sup-row-home"><?= $this->lang->line('menu_benefactores')?></div></a>
+                    <a href="<?= base_url()?>voluntarios"><div class="sub-row-home"><?= $this->lang->line('menu_voluntarios')?></div></a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-talleres menu-home-sections">
                     <a href="<?= base_url()?>taller"><div class="sup-row-home"><?= $this->lang->line('menu_talleres')?></div></a>
@@ -36,7 +36,7 @@
                     <a href="<?= base_url()?>cultura"><div class="sub-row-home"><?= $this->lang->line('menu_cultura')?></div></a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-visita menu-home-sections">
-                    <a><div class="sup-row-home"><?= $this->lang->line('menu_visita')?></div>
+                    <a href="<?= base_url()?>visitas"><div class="sup-row-home"><?= $this->lang->line('menu_visita')?></div>
                     <a href="<?= base_url()?>contacta"><div class="sub-row-home"><?= $this->lang->line('menu_contacto')?></div></a>
                 </div>
             </div>
