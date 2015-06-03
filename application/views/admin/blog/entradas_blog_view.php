@@ -14,11 +14,10 @@
     
     <div class="box margin-top-10">
         <div class="box-header">
-            <h3 class="box-title">Data Table With Full Features</h3>
+            <h3 class="box-title">Entradas</h3>
         </div><!-- /.box-header -->
         <div class="col-md-12 pull-right">
             <a type="buton" class="btn btn-primary btn-info right"  href="<?= base_url()?>admin/blog/addPost"> Añadir nueva entrada</a>
-            <button type="button" class="btn btn-primary btn-info right" data-toggle="modal" data-target="#myModal"><?= lang('index_create_user_link') ?></button>
         </div>
         <div class="col-md-4 pull-right">
                     <div class="input-icon right">

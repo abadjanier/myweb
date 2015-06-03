@@ -51,7 +51,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="col-md-12 pull-right">
-                                <button type="button" class="btn btn-primary btn-info right" data-toggle="modal" data-target="#myModal"><?= lang('index_create_user_link') ?></button>
+                                <button type="button" class="btn btn-primary btn-info right" data-toggle="modal" data-target="#myModal">Crear nuevo tipo</button>
                             </div>
                             <div class="col-md-4 pull-right">
                                 <div class="input-icon right">
