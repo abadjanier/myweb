@@ -12,7 +12,6 @@ class Events extends CI_Controller{
          $this->load->helper('my_injector');
          $this->lang->load('auth', $idiom);
          $this->load->model('events_model');
-         $this->output->enable_profiler(TRUE);
          if (!$this->ion_auth->logged_in()) {
             //redirect them to the login page
             redirect('admin/auth/login', 'refresh');

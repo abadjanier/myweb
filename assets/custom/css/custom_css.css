@@ -387,7 +387,6 @@ header#menu-top .menu-responsive .icon-menu-top:hover{
 
 #list-airplanes .list-items{
     z-index: 2;
-    color: #6F6F6F;
     background-color: #F4F4F4;
     border-color: transparent;
     border-radius: 0px;
@@ -404,6 +403,7 @@ header#menu-top .menu-responsive .icon-menu-top:hover{
 #list-airplanes p{
     padding: 15px 0px;
     font-size: 30px;
+        color: #6F6F6F;
 }
 
 #list-airplanes .search{
@@ -411,8 +411,15 @@ header#menu-top .menu-responsive .icon-menu-top:hover{
     margin-bottom: 75px;
 }
 
-#list-airplanes .effect-top{
-    transition: 0.3s;
+#list-airplanes .effect-hover{
+                transition: 0.7s;
+}
+
+#list-airplanes .effect-hover:hover{
+            box-shadow: 0px 15px 24px -13px rgba(112,112,112,0.85);
+            moz-box-shadow: 0px 15px 24px -13px rgba(112,112,112,0.85);
+            -webkit-box-shadow: 0px 15px 24px -13px rgba(112,112,112,0.85);
+            transition: 0.3s;
 }
 
 /****************************************
@@ -421,7 +428,7 @@ header#menu-top .menu-responsive .icon-menu-top:hover{
 
 #info-airplanes{
     color: #616161;
-
+    margin-bottom: 80px;
 }
 
 #info-airplanes .title-airplane{

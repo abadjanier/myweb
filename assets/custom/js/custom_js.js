@@ -71,19 +71,6 @@ $('#menu-full-responsive .fa-times').click(function () {
     }, 200);
 });
 
-
-// Close active menu responsive
-
-$('#list-airplanes .list-items').hover(function () {
-    $(this).prepend('<div id="howhow" style="opacity: 0.7;background: #FFF; width: 100%; height: 100%; position: absolute; z-index: 999999;"></div>');
-    $(this).find(".effect-top").css({"margin-top": "-40%", "color": "#000", "z-index": "99999999"});
-},
-        function () {
-            $('#howhow').remove();
-            $(this).find(".effect-top").css({"margin-top": "0%", "color": "", "z-index": ""});
-        });
-
-
 // Activar checkbox de abajo una vez seleccionado lo de arriba.
 
 $('#check-colabora-activamente').click(function () {
