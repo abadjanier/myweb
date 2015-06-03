@@ -20,11 +20,11 @@
     <div class="row" ng-init="getAviones()">
             <div class="col-md-6 col-xs-12 list-items" ng-repeat="avion in filteredTodos | orderBy:predicate:reverse | filter:search:strict">
                 <a href="<?= base_url()?>aviones/avion/{{avion.aviones_idavion}}">
-                <div class="row">
+                <div class="row effect-hover">
                     <div class="col-xs-12">
                         <img src="<?= base_url() ?>source/aviones/{{avion.imagen}}" alt="{{avion.nombre}}">
                     </div>
-                    <div class="col-xs-12 effect-top">
+                    <div class="col-xs-12">
                         <p>{{avion.nombre}}</p>
                     </div>
                 </div>
