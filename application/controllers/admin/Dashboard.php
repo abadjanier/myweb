@@ -8,7 +8,6 @@ class Dashboard extends CI_Controller {
         parent::__construct();
         $this->load->library(array('ion_auth', 'form_validation'));
         $this->load->helper('MY_injector');
-        $this->output->enable_profiler(TRUE);
 
         if (!$this->ion_auth->logged_in()) {
             //redirect them to the login page
