@@ -26,7 +26,8 @@ class Events extends CI_Controller{
          $data = array(
                     'page_content' => $vista,
                     'user_name' => $user->username,
-                    'events' => true
+                    'events' => true,
+                    'title' => 'Events'
                 );
         $this->load->view("admin/index_admin_view",$data);
         
@@ -229,7 +230,7 @@ class Events extends CI_Controller{
 
         $response = new stdClass();
             $this->form_validation->set_rules('event_name', $this->lang->line('create_user_validation_fname_label'), 'required|is_unique[tipos_even.nombre]');
-            $this->form_validation->set_rules('event_desc', $this->lang->line('create_user_validation_email_label'), 'required|min_length[10]');
+            $this->form_validation->set_rules('event_desc', $this->lang->line('create_user_validation_email_label'), 'required|min_length[5]');
             $this->form_validation->set_rules('event_color', $this->lang->line('create_user_validation_email_label'), 'required|is_unique[tipos_even.color]');
 
             if ($this->form_validation->run() == true) {

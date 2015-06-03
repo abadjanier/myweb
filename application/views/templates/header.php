@@ -27,7 +27,7 @@
                         <a href="<?= base_url()?>jardi"><div class="sub-row-home"><?= $this->lang->line('menu_jardinmuseo')?></div></a>
                     </div>
                     <div class="col-xs-4 menu-top-cultura">
-                        <a><div class="sup-row-home"><?= $this->lang->line('menu_heritage')?></div></a>
+                        <a href="<?= base_url()?>aviones"><div class="sup-row-home"><?= $this->lang->line('menu_heritage')?></div></a>
                         <a href="<?= base_url()?>cultura"><div class="sub-row-home"><?= $this->lang->line('menu_cultura')?></div></a>
                     </div>
                     <div class="col-xs-4 menu-top-visita">
@@ -88,7 +88,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 menu-responsive-cultura">
-                            <a><div class="col-xs-6"><?= $this->lang->line('menu_heritage')?></div></a>
+                            <a href="<?= base_url()?>aviones"><div class="col-xs-6"><?= $this->lang->line('menu_heritage')?></div></a>
                             <a href="<?= base_url()?>cultura"><div class="col-xs-6"><?= $this->lang->line('menu_cultura')?></div></a>
                         </div>
                     </div>
