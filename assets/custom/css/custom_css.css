@@ -185,7 +185,7 @@ header #container-select i{
 ****************************************/
 
 section#menu-home{
-
+ margin-bottom: 60px;
 }
 
 section#menu-home .menu-home-fundacion, header#menu-top .menu-top-fundacion, #menu-full-responsive .menu-responsive-fundacio{
@@ -863,6 +863,19 @@ margin-top: 25px;
 
 #benefactores h3{
     font-weight: 300;
+}
+
+
+/****************************************
+        VISITAS
+****************************************/
+
+#visitas{
+    margin-bottom: 80px;
+}
+
+#visita form{
+    margin: 0 auto;
 }
 
 

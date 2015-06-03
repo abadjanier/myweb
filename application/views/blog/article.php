@@ -101,20 +101,20 @@
                             <p class="titles">Escribe tu comentario:</p>
                             <form role="form">
                                 <div class="form-group">
-                                    <label for="nombre-form">Nombre:</label>
-                                    <input type="text" name="nombre" class="form-control" id="nombre-form">
+                                    <label for="nombre-form">*Nombre:</label>
+                                    <input type="text" name="nombre" class="form-control" id="nombre-form" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email-form">Email:</label>
-                                    <input type="email" name="email" class="form-control" id="email-form">
+                                    <label for="email-form">*Email:</label>
+                                    <input type="email" name="email" class="form-control" id="email-form" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="website-form">Website:</label>
                                     <input type="text" name="website" class="form-control" id="website-form">
                                 </div>
                                 <div class="form-group">
-                                    <label for="comentario-form">Comentario:</label>
-                                    <textarea class="form-control" name="comentario" id="comentario-form"></textarea>
+                                    <label for="comentario-form">*Comentario:</label>
+                                    <textarea class="form-control" name="comentario" id="comentario-form" required></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-default button-form">Comentar</button>
                             </form>   
