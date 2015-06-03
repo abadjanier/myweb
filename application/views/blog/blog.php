@@ -20,7 +20,7 @@
                         <div class="col-md-8 col-sm-12 info-single-post">
                             <h3><?= $post->titulo?></h3>
                             <p><?php if(strlen ( $post->contenido ) > 1000){ echo substr($post->contenido, 0, 400).'...';}else{ echo $post->contenido; }  ?></p>
-                            <a type="button" href="<?= base_url()?>pacobert/article/<?= $post->posts_id ?>" class="btn btn-default">Leer más</a>
+                            <a type="button" href="<?= base_url()?><?=$this->uri->segment(1)?>/article/<?= $post->posts_id ?>" class="btn btn-default">Leer más</a>
                         </div>
                     </div>
                 </div>

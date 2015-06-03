@@ -32,7 +32,7 @@
                     <a href="<?= base_url()?>jardi"><div class="sub-row-home"><?= $this->lang->line('menu_jardinmuseo')?></div></a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-cultura menu-home-sections">
-                    <a><div class="sup-row-home"><?= $this->lang->line('menu_heritage')?></a></div>
+                    <a href="<?= base_url()?>aviones"><div class="sup-row-home"><?= $this->lang->line('menu_heritage')?></div></a>
                     <a href="<?= base_url()?>cultura"><div class="sub-row-home"><?= $this->lang->line('menu_cultura')?></div></a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-visita menu-home-sections">
