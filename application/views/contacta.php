@@ -10,20 +10,20 @@
             <div class="col-md-8 col-sm-12">
                 <form role="form">
                     <div class="form-group">
-                        <label for="nombre-form">Nombre:</label>
-                        <input type="text" name="nombre" class="form-control" id="nombre-form">
+                        <label for="nombre-form">*Nombre:</label>
+                        <input type="text" name="nombre" class="form-control" id="nombre-form" required>
                     </div>
                     <div class="form-group">
-                        <label for="email-form">Email:</label>
-                        <input type="email" name="email" class="form-control" id="email-form">
+                        <label for="email-form">*Email:</label>
+                        <input type="email" name="email" class="form-control" id="email-form" required>
                     </div>
                     <div class="form-group">
-                        <label for="asunto-form">Asunto:</label>
-                        <input type="text" name="asunto" class="form-control" id="asunto-form">
+                        <label for="asunto-form">*Asunto:</label>
+                        <input type="text" name="asunto" class="form-control" id="asunto-form" required>
                     </div>
                     <div class="form-group">
-                        <label for="mensaje-form">Mensaje:</label>
-                        <textarea class="form-control" name="mensaje" id="mensaje-form"></textarea>
+                        <label for="mensaje-form">*Mensaje:</label>
+                        <textarea class="form-control" name="mensaje" id="mensaje-form" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-default button-form">Comentar</button>
                 </form>   
