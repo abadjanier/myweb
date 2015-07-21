@@ -22,7 +22,7 @@
                 <a href="<?= base_url()?>aviones/avion/{{avion.aviones_idavion}}">
                 <div class="row effect-hover">
                     <div class="col-xs-12">
-                        <img src="<?= base_url() ?>source/aviones/{{avion.imagen}}" alt="{{avion.nombre}}">
+                        <img src="<?= base_url() ?>source/aviones/{{avion.imagen}}_thumb.jpg" alt="{{avion.nombre}}">
                     </div>
                     <div class="col-xs-12">
                         <p>{{avion.nombre}}</p>

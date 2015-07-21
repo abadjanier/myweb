@@ -53,9 +53,9 @@
             <div class="row">
                 <div class="col-xs-12 align-right">
                     <select id="lenguage-selector">
-                        <option  value="es" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/spain.png">ES</option>
-                        <option value="cat" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/catalonia.png">CA</option>
-                        <option  value="en" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/unitedkingdom.png">EN</option>
+                        <option <?php if ($idiom == 'spanish') echo 'selected'?> value="es" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/spain.png">ES</option>
+                        <option <?php if ($idiom == 'catalan') echo 'selected'?> value="cat" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/catalonia.png">CA</option>
+                        <option <?php if ($idiom == 'english') echo 'selected'?> value="en" data-imagesrc="<?= base_url() ?>assets/custom/img/lenguage/unitedkingdom.png">EN</option>
                     </select>
                 </div>
             </div>

@@ -170,7 +170,7 @@ class Aviones extends CI_Controller {
                     'peso' => $this->input->post('peso'),
                     'historia' => $this->input->post('hcat'),
                     'lang' => 'catalan',
-                    'imagen' => $_FILES['userfile']['name']
+                    'imagen' => substr($_FILES['userfile']['name'], 0, -4)
                 );
                 $aviones->avion_2 = array(
                     'matricula' => $this->input->post('matricula'),
@@ -188,7 +188,7 @@ class Aviones extends CI_Controller {
                     'peso' => $this->input->post('peso'),
                     'historia' => $this->input->post('hcas'),
                     'lang' => 'spanish',
-                    'imagen' => $_FILES['userfile']['name']
+                    'imagen' => substr($_FILES['userfile']['name'], 0, -4)
                 );
                 $aviones->avion_3 = array(
                     'matricula' => $this->input->post('matricula'),
@@ -206,7 +206,7 @@ class Aviones extends CI_Controller {
                     'peso' => $this->input->post('peso'),
                     'historia' => $this->input->post('hen'),
                     'lang' => 'english',
-                    'imagen' => $_FILES['userfile']['name']
+                    'imagen' => substr($_FILES['userfile']['name'], 0, -4)
                 );
 
                 if ($this->aviones_model->create_avion($aviones, $user->id)) {
@@ -322,9 +322,9 @@ class Aviones extends CI_Controller {
             );
 
             if ($_FILES['userfile']['name'] != "") {
-                $aviones->avion_1['imagen'] = $_FILES['userfile']['name'];
-                $aviones->avion_2['imagen'] = $_FILES['userfile']['name'];
-                $aviones->avion_3['imagen'] = $_FILES['userfile']['name'];
+                $aviones->avion_1['imagen'] = substr($_FILES['userfile']['name'], 0, -4);
+                $aviones->avion_2['imagen'] = substr($_FILES['userfile']['name'], 0, -4);
+                $aviones->avion_3['imagen'] = substr($_FILES['userfile']['name'], 0, -4);
 
                 if ($this->aviones_model->upload_image()) {
                     if ($this->aviones_model->modificar_avion($aviones, $user->id)) {

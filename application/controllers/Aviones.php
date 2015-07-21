@@ -14,8 +14,10 @@ class Aviones extends CI_Controller {
     }
     
     public function index(){
+        $idiom = (empty($this->session->idiom)) ?  $this->session->idiom : $this->config->item('language');
         $data = array(
-            'contacta' => true
+            'contacta' => true,
+            'idiom' => $idiom
         );
          $this->load->view('templates/head');
         $this->load->view('templates/header',$data);
@@ -27,8 +29,10 @@ class Aviones extends CI_Controller {
     public function avion($id = false){
         if($id != false){
             
-            $data = array(
-            'contacta' => true
+            $idiom = (($this->session->idiom)) ?  $this->session->idiom : $this->config->item('language');
+        $data = array(
+            'contacta' => true,
+            'idiom' => $idiom
         );
          $this->load->view('templates/head');
         $this->load->view('templates/header',$data);

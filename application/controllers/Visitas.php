@@ -12,8 +12,10 @@ class Visitas extends CI_Controller {
     }
     
     public function index(){
+        $idiom = (($this->session->idiom)) ?  $this->session->idiom : $this->config->item('language');
         $data = array(
-            'visitas' => true
+            'contacta' => true,
+            'idiom' => $idiom
         );
         
         $this->load->view('templates/head');

@@ -60,7 +60,7 @@ app.controller('avionesfrontCtrl', function ($scope, $http) {
     
      $scope.currentPage = 1;
 
-  $scope.itemsperpage = 4;
+  $scope.itemsperpage = 2;
   $scope.filteredTodos = []
 
   $scope.setPage = function (pageNo) {

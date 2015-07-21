@@ -101,16 +101,6 @@ app.controller('eventsCtrl', function ($scope, $http, $rootScope, $timeout, dial
                     }
 
 
-//                if (data.message) {
-//                    // if not successful, bind errors to error variables
-//                    $scope.userError = true
-//
-//                } else {
-//                    // if successful, bind success message to message
-//                    $scope.message = data.message;
-//                    $scope.getUser();
-//                    $('#myModal').modal('toggle')
-//                }
                 });
     };
 
@@ -235,82 +225,6 @@ app.controller('eventsCtrl', function ($scope, $http, $rootScope, $timeout, dial
         console.log('Clearing Data...');
         $scope.addEvent = {};
     };
-//    
-//    
-//    $scope.deactiveUser = function (user_id,username) {
-//        //$scope.addRow();
-//        var dlg = dialogs.confirm('Desactivar Usuario','Desea desactivar el usuario '+username);
-//        dlg.result.then(function () {
-//            $scope.ajaxInProgress = true;
-//            $http({
-//                method: 'POST',
-//                cache: false, // This caches the response to the request
-//                url: base_url + "admin/users/deactivate/"+user_id,
-//                headers: {
-//                    'Content-Type': 'application/x-www-form-urlencoded'
-//                }, // set the headers so angular passing info as form data (not request payload)
-//                headers: {
-//                    'X-Requested-With': 'XMLHttpRequest'
-//                } // set the headers so angular passing info as form data (not request payload)
-//            })
-//                    .success(function (data) {
-//                        $scope.ajaxInProgress = false;
-//                        console.log(data);
-//
-//                        if (data) {
-//                            // if successful, bind success message to message
-//                            $scope.getUser();
-//
-//                        } else {
-//                             // if not successful, bind errors to error variables
-//                        }
-//                    });
-//        }, function (btn) {
-//
-//        });
-//
-//    };
-//    
-//    
-//    
-//    $scope.activeUser = function (user_id,username) {
-//        //$scope.addRow();
-//        var dlg = dialogs.confirm('Activar Usuario','Desea activar el usuario '+username);
-//        dlg.result.then(function () {
-//            $scope.ajaxInProgress = true;
-//            $http({
-//                method: 'POST',
-//                cache: false, // This caches the response to the request
-//                url: base_url + "admin/users/activate/"+user_id,
-//                headers: {
-//                    'Content-Type': 'application/x-www-form-urlencoded'
-//                }, // set the headers so angular passing info as form data (not request payload)
-//                headers: {
-//                    'X-Requested-With': 'XMLHttpRequest'
-//                } // set the headers so angular passing info as form data (not request payload)
-//            })
-//                    .success(function (data) {
-//                        $scope.ajaxInProgress = false;
-//                        console.log(data);
-//
-//                        if (data) {
-//                            // if successful, bind success message to message
-//                            $scope.getUser();
-//
-//                        } else {
-//                             // if not successful, bind errors to error variables
-//                        }
-//                    });
-//        }, function (btn) {
-//
-//        });
-//
-//    };
-
-
-
-
-
 
 $('#calendar').fullCalendar({
     dayClick: day,
@@ -380,15 +294,6 @@ function day(date, jsEvent, view) {
         }
     
     console.log(events);
-//    alert('Clicked on: ' + date.format());
-//
-//
-//    alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-//
-//    alert('Current view: ' + view.name);
-
-    // change the day's background color just for fun
-//    $(this).css('background-color', 'red');
 
 }
 
@@ -399,10 +304,4 @@ $('#myModal2').on('hidden.bs.modal', function () {
 
 
 });
-
-
-// page is now ready, initialize the calendar...
-
-
-
 

@@ -13,8 +13,10 @@ class Escola extends CI_Controller {
     }
     
     public function index($pagina = false){
+        $idiom = (($this->session->idiom)) ?  $this->session->idiom : $this->config->item('language');
         $data = array(
             'contacta' => true,
+            'idiom' => $idiom
         );
          $this->load->view('templates/head');
         $this->load->view('templates/header',$data);
@@ -62,8 +64,10 @@ class Escola extends CI_Controller {
     
     public function article($id = false){
         if ($id != false){
-            $data = array(
-            'pacobert' => true,
+            $idiom = (($this->session->idiom)) ?  $this->session->idiom : $this->config->item('language');
+        $data = array(
+            'contacta' => true,
+            'idiom' => $idiom
         );
          $this->load->view('templates/head');
         $this->load->view('templates/header',$data);

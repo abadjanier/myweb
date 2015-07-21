@@ -150,19 +150,27 @@ class Aviones_model extends CI_Model{
         }
         
     public function getAvionesLang($id = false){
+        
         $idiom = ($this->session->idiom) ?  $this->session->idiom : $this->config->item('language');
         if ($id != false){
-            $param = array('aviones_idavion' => $id);
+            $this->db->select('aviones_lang.*');
+            $this->db->from('aviones_lang');
+            $this->db->join('aviones', 'aviones.idavion = aviones_lang.aviones_idavion');
+            $param = array('aviones_lang.aviones_idavion' => $id);
             $this->db->where($param);
-            $param = array('lang' => $idiom);
+            $param = array('aviones_lang.lang' => $idiom);
             $this->db->where($param);
-            $query = $this->db->get('aviones_lang');
+            $param = array('aviones.visibilidad' => '1');
+            $this->db->where($param);
+            $query = $this->db->get();
             
         }else{
-            $this->db->select('nombre, imagen, aviones_idavion');
-            $param = array('lang' => $idiom);
+            $this->db->select('aviones_lang.nombre, aviones_lang.imagen,aviones_lang.aviones_idavion');
+            $this->db->from('aviones_lang');
+            $this->db->join('aviones', 'aviones.idavion = aviones_lang.aviones_idavion ');
+            $param = array('aviones_lang.lang' => $idiom);
             $this->db->where($param);
-            $query = $this->db->get('aviones_lang');
+             $query = $this->db->get();
            
         }
         

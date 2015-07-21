@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="image-airplane">
-                        <img class="img-responsive" src="<?= base_url() ?>source/aviones/<?= $avion[0]->imagen?>" alt="<?= $avion[0]->imagen?>">
+                        <img class="img-responsive" src="<?= base_url() ?>source/aviones/<?= $avion[0]->imagen?>.jpg" alt="<?= $avion[0]->imagen?>">
                     </div>
                 </div>
             </div>
